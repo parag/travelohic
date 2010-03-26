@@ -1,72 +1,170 @@
 <!DOCTYPE html>
-
 <html lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>full background test</title>
-	<!-- Source File -->
-	<!--<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css">
- -->
-	<style type="text/css" media="screen">
-		*{border:0px solid #eee;margin:0;padding:0;list-style:none}
-		body{font-family:Arial,Helvetica,sans-serif;font-size:10px;cursor:default;color:#fff}
-		h1,h2,.large,.left{font-family:"Century Gothic","Lucida Grande",Arial,sans-serif;font-size:40px}
-		a{text-decoration:none;color:#000;outline:0}
-		img{display:block}
-		img.bg {
-			/* rule to fill background*/
-			min-height: 100%;
-			min-width:1024px;
-			
-			/* rules for proportionate scaling */
-			width:100%;
-			height:auto;
-			
-			/* set up positioning */
-			position:fixed;
-			top:0;
-			left:0;
-		}
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>full background test</title>
+        <!-- Source File -->
+        <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/reset-fonts-grid.css">
+        <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/nicescreen.css">
+    </head>
+    <body>
+        <img src="<?=base_url()?>images/bgs/bg.png" class="bg" />
+        <div id="description">
+            <span>travelohic.com</span>
+            <h1><a href=#>The Taj Mahal</a></h1>
+            <div>
+                <h2>One of the seven wonders of the world. Situated in the mid of India, this place is a must go.</h2>
+            </div>
+        </div>
+        <div id="similiar">
+            testing the related field
+			<span id="close-similiar"><a href="#" id="closesimiliar"><img src="<?=base_url()?>/images/icons/close.png"></a></span>
+        </div>
+		<div id="comments">
+			<div id="comment1">
+				comment 1
+			</div>
+			<div id="comment2">
+				comment 2
+			</div>
+		</div>
+        <div id="menu">
+            <ul>
+                <li>
+                    welcome Parag!
+                </li>
+                <li>
+                    <a href="#">home</a>
+                </li>
+                <li>
+                    <a href="#moods" id="openmoods">moods</a>
+                </li>
+                <li>
+                    <a href="#similiar" id="opensimiliar">similiar</a>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+            <!--	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+            -->
+        </div>
+        <div id="leader">
+            <form method="get" action="#">
+                <div class="box">
+                    <label>
+                        <span>name</span>
+                        <input type="text" class="input_text" name="name" id="name">
+                    </label>
+                    <label>
+                        <span>email</span>
+                        <input type="text" class="input_text" name="email" id="email">
+                    </label>
+                    <label>
+                        <span>phone</span>
+                        <input type="text" class="input_text" name="phone" id="email">
+                    </label>
+                    <label>
+                        <span>country</span>
+                        <input type="text" class="input_text" name="country" id="country">
+                    </label>
+                    <label>
+                        <span>comment</span>
+                        <br/>
+                        <br/>
+                        <textarea class="message" name="comment" id="comment">
+                        </textarea>
+                        <br/>
+                        <br/>
+                        <input type="button" class="button" value="enquire" onclick="alert('test');">
+                    </label>
+                </div>
+            </form>
+        </div>
+		<div id="moods" class="slide-right">moods</div>
+    </body>
+</html><!-- time for some javascript-->
+<script src="<?=base_url()?>js/jquery.min.js"></script>
+<script src="<?=base_url()?>js/jquery-ui.min.js"></script>
+<script src="<?=base_url()?>js/jquery.dotimeout.min.js"></script>
+<script type="text/javascript">
+     $(document).ready(function(){
+	 	var comments = {
+			num: "2",
+			comment_1: "comment 1",
+			comment_2: "comment 2" 
+		};
+	 	var hide_sliders=function(){
+			$("div#similiar").hide();
+			$("div.slide-right").hide();
+		};
 		
-		@media screen and (max-width:1024px){
-			img.bg{
-				left:50%;
-				margin-left:-512px;
+		hide_sliders();
+		
+		var show_similiar=function(){
+			if ($('div#similiar').is(':visible')) {
+			    // do nothing
+			} else {
+			    $("div#similiar").show("slide", { direction: "down" }, 1000);
 			}
 		}
 		
-		div#content{
-			/*position should be relative as we need content to show on top of background*/
-			position:relative;
+		var hide_similiar=function(){
+			if ($('div#similiar').is(':visible')) {
+			    $("div#similiar").hide("slide", { direction: "down" }, 1000);
+			} else {
+			    // do nothign
+			}
 		}
 		
-		#description{position:absolute;bottom:10px;left:141px;z-index:80;right:300px;line-height:12px}
-		#description div{height:56px;background:#000;opacity:0.6;filter:alpha(opacity=60);padding:7px 0 0 7px}
-		#description span{position:absolute;height:43px;padding:20px 7px 0 7px;background:#000;font-size:42px;text-align:right;right:-300px;margin-bottom:-63px;width:285px;opacity:0.99;}
-		h2{font-size:10px;}
-		h1{position:relative;left:-141px;margin-bottom:-63px;width:141px;opacity:0.99}
-		h1 a{padding:41px 10px 10px 0;color:#fff;background:#000;font-size:11px;text-align:right;display:block}
+		var show_moods=function(){
+			if ($('div#moods').is(':visible')) {
+			    // do nothing
+			} else {
+			    $("div#moods").show("slide", { direction: "right" }, 1000);
+			}
+		}
 		
-		#menu{position:absolute;top:10px;left:141px;z-index:80;line-height:12px}
-	</style>
-</head>
-<body>
-<img src="<?=base_url()?>images/bgs/bg.png" class="bg" />
-<div id="description">
-	<span>travelohic.com</span>
-	<h1><a href=#>The Taj Mahal</a></h1>
-	<div>
-		<h2>One of the seven wonders of the world. Situated in the mid of India, this place is a must go.</h2>
-	</div>
-</div>
-<div id="menu">
-</div>
-<div id="content">
-<!--	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p> 
-	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p> 
-	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p> 
-	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p> 
-	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
---></div>
-</body>
-</html>
+		var hide_moods=function(){
+			if ($('div#moods').is(':visible')) {
+			    $("div#moods").hide("slide", { direction: "right" }, 1000);
+			} else {
+			    // do nothign
+			}
+		}
+		
+		var toggle_comment1=function(){
+			$("#comment1").toggle();
+			$("comments").doTimeout(1000, function(){
+		 	toggle_comment1();
+		 });
+		}
+		toggle_comment1();
+	 	
+       $("#opensimiliar").click(function(event){
+	   	hide_moods();
+		 show_similiar();
+		 event.preventDefault();
+       });
+	   $("#closesimiliar").click(function(event){
+	   		hide_similiar();
+			event.preventDefault();
+	   });
+	   $("#openmoods").click(function(event){
+	   	hide_similiar();
+		 show_moods();
+		 event.preventDefault();
+       });
+	   $("#closemoods").click(function(event){
+	   		hide_moods();
+			event.preventDefault();
+	   });
+     });
+	 
+	 
+	 
+</script>
+
