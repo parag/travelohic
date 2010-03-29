@@ -3,7 +3,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>full background test</title>
-        <!-- Source File -->
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/reset-fonts-grid.css">
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/nicescreen.css">
     </head>
@@ -163,8 +162,5 @@
 			event.preventDefault();
 	   });
      });
-	 
-	 
-	 
 </script>
 

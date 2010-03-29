@@ -1,4 +1,8 @@
 <?php
+/*
+ * @author parag (paragarora.com)
+ * © 2009-10 Travelomate
+ */
 
 class Welcome extends Controller {
 
