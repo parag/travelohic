@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/nicescreen.css">
     </head>
     <body>
-        <img src="<?=base_url()?>images/bgs/bg.png" class="bg" />
+        <img src="<?=base_url()?>images/bgs/name.png" class="bg" />
         <div id="description">
             <span>travelohic.com</span>
             <h1><a href=#>The Taj Mahal</a></h1>
