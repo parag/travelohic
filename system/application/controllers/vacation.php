@@ -4,9 +4,9 @@
  * © 2009-10 Travelohic
  */
 
-class Welcome extends Controller {
+class Vacation extends Controller {
 
-	function Welcome()
+	function Vacation()
 	{
 		parent::Controller();	
 	}
@@ -17,5 +17,5 @@ class Welcome extends Controller {
 	}
 }
 
-/* End of file welcome.php */
-/* Location: ./system/application/controllers/welcome.php */
+/* End of file vacation.php */
+/* Location: ./system/application/controllers/vacation.php */

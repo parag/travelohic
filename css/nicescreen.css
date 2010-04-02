@@ -1,0 +1,50 @@
+* {border: 0px solid #eee; margin: 0; padding: 0; list-style: none}
+body {font-family: Arial, Helvetica, sans-serif; font-size: 10px; cursor: default; color: #eee}
+h1, h2, .large, .left { font-family: Arial, Helvetica, sans-serif;font-size: 40px}
+a {text-decoration: none; color: #000;outline: 0}
+img {display: block}
+img.bg {min-height: 100%;min-width: 800px;width: 100%;height: auto;position: fixed;top: 0;left: 0;}
+@media screen and (max-width:1024px){img.bg{left:50%;margin-left:-512px;}}
+#description {position: absolute;bottom: 10px;left: 141px;z-index: 80;right: 300px;line-height: 12px}
+#description div {height: 56px;background: #000;opacity: 0.6;filter: alpha( opacity = 60);padding:7px 0 0 7px}
+#description span {position: absolute;color: #E6C702;height: 43px;padding: 20px 7px 0 7px;background: #000;font-size: 42px;text-align: right;right: -300px;margin-bottom: -63px;width: 285px;opacity: 0.99;}
+h2 {font-size: 10px;}
+h1 {position: relative;left: -141px;margin-bottom: -63px;width: 141px;opacity: 0.99}
+h1 a {padding: 41px 10px 10px 0;color: #ffffff;background: #000;font-size: 11px;text-align: right;display: block}
+#menu {position: absolute;top: 0;left: 0;opacity: 0.8;filter: alpha( opacity = 80);height: 20px;}
+#menu ul {list-style: none;margin: 0;padding: 5px 5px 0 5px;height: 20px;background: #1A1919;}
+#menu ul li {display: inline;font-size: 10px;color: #E6C702; }
+#menu ul a {background: #1A1919;color: #ABA7A8;padding: 5px;font-weight: bold;}
+#menu ul a:hover {background: #000;color: #fff;padding: 5px;height: 20px;}
+#leader {position: absolute;background: #000;opacity: 0.8;filter: alpha( opacity = 80);bottom:73px;top:0;right:20px;width:279px;}
+form, input, select, textarea {margin: 0;padding: 0;color: #ffffff;}
+div.box {margin: 0 auto;width: 270px;background: #000;position: relative;top: 20px;border: 1px solid #262626;}
+div.box h1 {color: #ffffff;font-size: 12px;text-transform: uppercase;padding: 5px 0 5px 5px;border-bottom: 1px solid #161712;border-top: 1px solid #161712;}
+div.box label {width: 100%;display: block;background: #1C1C1C;border-top: 1px solid #262626;border-bottom: 1px solid #161712;padding: 5px 0 5px 0;}
+div.box label span {display: block;color: #bbbbbb;font-size: 16px;float: left;width: 70px;text-align: right;}
+div.box .input_text {padding: 10px 0 10px 0;width: 160px;background: #262626;border-bottom: 1px double #171717;border-top: 1px double #171717;border-left: 1px double #333333;border-right: 1px double #333333;}
+div.box .message {padding: 7px 0 7px 0;width: 210px;background: #262626;border-bottom: 1px double #171717;border-top: 1px double #171717;border-left: 1px double #333333;border-right: 1px double #333333;overflow: hidden;height: 50px;}
+div.box .button {width: 264px;background: #826c03;height: 30px;font-size: 15px;font-weight: bold;padding: 3px;}
+div.smallbox {margin: 0 auto;width: 190px;background: #000;position: relative;top: 20px;border: 1px solid #262626;}
+div.smallbox h1 {color: #ffffff;font-size: 12px;text-transform: uppercase;padding: 5px 0 5px 5px;border-bottom: 1px solid #161712;border-top: 1px solid #161712;}
+div.smallbox label {width: 100%;display: block;background: #1C1C1C;border-top: 1px solid #262626;border-bottom: 1px solid #161712;padding: 5px 0 5px 0;}
+div.smallbox label span {display: block;color: #bbbbbb;font-size: 16px;float: left;width: 70px;text-align: right;}
+div.smallbox .input_text {padding: 10px 0 10px 0;width: 130px;background: #262626;border-bottom: 1px double #171717;border-top: 1px double #171717;border-left: 1px double #333333;border-right: 1px double #333333;}
+div.smallbox .message {padding: 3px 0 3px 0;width: 170px;background: #262626;border-bottom: 1px double #171717;border-top: 1px double #171717;border-left: 1px double #333333;border-right: 1px double #333333;overflow: hidden;height: 50px;}
+div.smallbox .button {width: 164px;background: #CC0000;height: 30px;font-size: 15px;font-weight: bold;padding: 3px;}
+#similiar {position: absolute;bottom: 74px;height: 100px;background: #262626;left: 0px;right: 300px;}
+#close-similiar {position: absolute;top: 0px;right: 0px;}
+.slide-right {position: absolute;right: 300px;width: 200px; top:0;background: #000;opacity: 0.8;filter: alpha( opacity = 80);}
+.slidelist{padding: 2px; font-size: 15px; font-weight:bold;}
+.slidelist a{color:#E6C702;}
+.slidelist a:hover {color:#ffffff;}
+#moving{position: absolute;background: #1a1a1a;opacity: 0.7;filter: alpha( opacity = 70);top:25px;left:0px;width:300px;padding:5px;}
+#moviecomments{margin: 0 auto;background: #000;position: relative;font-size:10px;}
+#moviecomments a{color:#eee;}
+#moviecomments a:hover{color:#ffffff;}
+#allcomments{margin: 0 auto;width: 190px;background: #000;position: relative;top: 20px;border: 1px solid #262626;padding:1px;}
+#content-slider {width:180px; height: 6px; margin:5px; background:#BBBBBB;position:relative;}
+.ui-slider-handle {width:8px; height:14px; position:absolute; top:-4px; background: #ff2100; border: solid 1px black;}
+#content-scroll {width: 190px; margin-top: 10px; overflow: hidden; border: solid 1px black;}
+#content-holder {width: 1000px; overflow: hidden;}
+.content-item {width: 170px; height: 270px; padding: 5px; float: left;}
