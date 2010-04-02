@@ -19,17 +19,27 @@ class Destination extends Controller {
 			$c->where('nickname',$name)->get();
 			if($c->id > 0)
 			{
+				$data['campaign_id'] = $c->id;
 				$data['name'] = $c->name;
 				$data['description'] = $c->description;
 				$data['photo'] = $c->photo;
 				$data['countryid'] = $c->countryid;
 				$data['categoryid'] = $c->categoryid;
 				$data['isInfo'] = $c->isInfo;
-				print_r($data);
-				echo "test";
+				$data['title'] = $c->name;
 			}
 		}
-		//$this->load->view('fullbackgroundtest');
+		$this->load->view('destination', $data);
+	}
+	
+	function addComment()
+	{
+		$c = new Comment();
+		$c->comment = $this->input->post("comment");
+		$c->campaign_id = $this->input->post("campaign_id");
+		$c->user_id = $this->input->post('user_id');
+		$c->save();
+		echo "q";
 	}
 }
 

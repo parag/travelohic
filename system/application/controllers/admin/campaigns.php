@@ -69,6 +69,18 @@ class Campaigns extends Controller {
 				}
 				if($isErr=="0")
 					$error = "Campaign saved successfully";
+				
+				/*
+				 * @paragarora: saving tags now for the campaign page
+				 */
+				$tagstr = $this->input->post('tags');
+				$tags = explode(" ", $tagstr);
+				foreach($tags as $tag)
+				{
+					$t = new Tag();
+					$t->name = $tag;
+					$t->save($c);
+				}
 			}
 		}
 		echo "<font color='red'>".$error."</font>";

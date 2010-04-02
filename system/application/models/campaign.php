@@ -6,6 +6,7 @@
  
  class Campaign extends Datamapper
  {
+ 	var $has_many = array('tag');
  	var $validation = array(
 		array(
 			'field' => 'name',

@@ -6,6 +6,7 @@
  
  class Tag extends Datamapper
  {
+ 	var $has_many = array("campaign");
  	function Tag()
 	{
 		parent::Datamapper();
