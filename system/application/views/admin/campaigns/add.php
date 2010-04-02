@@ -12,13 +12,13 @@ $tags = split(' ', $default_tags);
         <style type="text/css" media="screen">
         <!--
         
-        SPAN.tagMatches {
+        span.tagMatches {
         	position:absolute;
 			right:0;
 			margin: 10px;
         }
         
-        SPAN.tagMatches SPAN {
+        span.tagMatches SPAN {
             padding: 2px;
             margin-right: 4px;
             background-color: #0000AB;
