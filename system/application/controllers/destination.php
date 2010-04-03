@@ -27,6 +27,29 @@ class Destination extends Controller {
 				$data['categoryid'] = $c->categoryid;
 				$data['isInfo'] = $c->isInfo;
 				$data['title'] = $c->name;
+				
+				/*
+				 * get comments for the campaign
+				 */
+				$com = new Comment();
+				$com->where('campaign_id', $c->id)->get();
+				//$comments = new ArrayObject();
+				$commentsStr = "[";
+				$flag=0;
+				foreach($com->all as $comment)
+				{
+					if($flag)
+					{
+						$commentsStr=$commentsStr.",";
+					}
+					$flag=1;
+					$commentsStr = $commentsStr."\"".$comment->comment."\"";
+					//$data['comments'][] = $comment->comment;
+					//$data['comments_uid'][] = $comment->user_id;
+				}
+				$commentsStr=$commentsStr."]";
+				$data['commentsStr'] = $commentsStr;
+				$data['commentsNum'] = $com->count();
 			}
 		}
 		$this->load->view('destination', $data);

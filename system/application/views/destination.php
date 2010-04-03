@@ -121,10 +121,8 @@
 		var minLeft = 0;
 		var maxLeft = docWidth - 600;
 	 	var comments = {
-			num: 3,
-			comments: ["Lorem ipsum dolor sit amet, ut turpis sagittis, nec placerat, molestie convallis.Mattis et delectus, nullam cras et, faucibus ultrices. Nunc elit, tellus vulputate eros. Leo wisi, luctus pretium. Platea arcu, in natoque non, ipsum eu vivamus.",
-			"Nunc elit, tellus vulputate eros. Leo wisi, luctus pretium. Platea arcu, in natoque non, ipsum eu vivamus.",
-			"Nunc elit, tellus vulputate eros. Leo wisi, luctus pretium. Platea arcu, in natoque non, ipsum eu vivamus.Korem ipsum dolor sit amet, ut turpis sagittis, nec placerat, molestie convallis. Mattis et delectus, nullam cras et, faucibus ultrices."]
+			num: <?=$commentsNum?>,
+			comments: <?=$commentsStr?>
 		};
 	 	var hide_sliders=function(){
 			$("div#similiar").hide();
