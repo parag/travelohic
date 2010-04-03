@@ -17,8 +17,8 @@
 			'rules' => array('required','trim','unique','min_length'=>6,'encrypt'),
 		),
 		array(
-			'field' => 'confirm_password',
-			'label' => 'Confirm Password',
+			'field' => 'verify_password',
+			'label' => 'Verify Password',
 			'rules' => array('encrypt', 'matches'=>'password'),
 		),
 		array(

@@ -25,7 +25,8 @@
             </div>
         </div>
         <div id="form">
-            <?php echo form_open_multipart('user/register'); ?>
+        	<font color="red"><?=$e?></font>
+            <?php echo form_open_multipart('accounts/register'); ?>
             	<input type="hidden" name="issend" value="1">
                 <div class="box" style="">
                     <label>
