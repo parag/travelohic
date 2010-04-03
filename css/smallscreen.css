@@ -1,0 +1,23 @@
+* {border: 0px solid #eee; margin: 0; padding: 0; list-style: none}
+body {font-family: Arial, Helvetica, sans-serif; font-size: 10px; cursor: default; color: #eee;}
+h1, h2, .large, .left { font-family: Arial, Helvetica, sans-serif;font-size: 40px}
+a {text-decoration: none; color: #000;outline: 0}
+#description {position: absolute;top: 2px;left: 141px;z-index: 80;right: 300px;line-height: 12px}
+#description div {height: 56px;background: #000;opacity: 0.6;filter: alpha( opacity = 60);padding:7px 0 0 7px}
+#description span {position: absolute;color: #E6C702;height: 43px;padding: 20px 7px 0 7px;background: #000;font-size: 42px;text-align: right;right: -300px;margin-bottom: -63px;width: 285px;opacity: 0.99;}
+h2 {font-size: 10px;}
+h1 {position: relative;left: -141px;margin-bottom: -63px;width: 141px;opacity: 0.99}
+h1 a {padding: 41px 10px 10px 0;color: #ffffff;background: #000;font-size: 11px;text-align: right;display: block}
+#menu {position: absolute;top: 64px;left: 0;opacity: 0.8;filter: alpha( opacity = 80);height: 20px;}
+#menu ul {list-style: none;margin: 0;padding: 5px 5px 0 5px;height: 20px;background: #1A1919;}
+#menu ul li {display: inline;font-size: 10px;color: #E6C702; }
+#menu ul a {background: #1A1919;color: #ABA7A8;padding: 5px;font-weight: bold;}
+#menu ul a:hover {background: #000;color: #fff;padding: 5px;height: 20px;}
+form, input, select, textarea {margin: 0;padding: 0;color: #ffffff;}
+div.box {margin: 0 auto;width: 270px;height: auto; background: #000;position: relative;top: 94px;border: 1px solid #262626;}
+div.box h1 {color: #ffffff;font-size: 12px;text-transform: uppercase;padding: 5px 0 5px 5px;border-bottom: 1px solid #161712;border-top: 1px solid #161712;}
+div.box label {width: 100%;display: block;background: #1C1C1C;border-top: 1px solid #262626;border-bottom: 1px solid #161712;padding: 5px 0 5px 0;}
+div.box label span {display: block;color: #bbbbbb;font-size: 16px;float: left;width: 70px;text-align: right;}
+div.box .input_text {padding: 10px 0 10px 0;width: 160px;background: #262626;border-bottom: 1px double #171717;border-top: 1px double #171717;border-left: 1px double #333333;border-right: 1px double #333333;}
+div.box .message {padding: 7px 0 7px 0;width: 210px;background: #262626;border-bottom: 1px double #171717;border-top: 1px double #171717;border-left: 1px double #333333;border-right: 1px double #333333;overflow: hidden;height: 50px;}
+div.box .button {width: 264px;background: #826c03;height: 30px;font-size: 15px;font-weight: bold;padding: 3px;}
