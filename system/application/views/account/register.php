@@ -46,6 +46,10 @@
                         <input type="password" class="input_text" name="verify_password" id="verify_password">
                     </label>
 					 <label>
+                        <span>url</span>
+                        <input type="text" class="input_text" name="url" id="url">
+                    </label>
+					 <label>
                         <span>mobile</span>
                         <input type="text" class="input_text" name="mobile" id="mobile">
                     </label>

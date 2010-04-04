@@ -47,7 +47,6 @@
         $u->where('email', $this->email)->get();
         // Give this Account their stored salt
         $this->salt = $u->salt;
-
         // Validate and get this Account by their property values,
         // this will see the 'encrypt' validation run, encrypting the password with the salt
         $this->validate()->get();
@@ -119,4 +118,8 @@
         }
     }
 	
+	function getThisPass()
+	{
+		return ($this->salt.$this->password);
+	}	
  }
