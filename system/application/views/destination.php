@@ -12,7 +12,17 @@
 		<div id="menu">
             <ul>
                 <li>
-                    welcome Parag!
+                    <?php
+					if($a->isLogin())
+					{
+						echo "welcome ".$a->name;
+					}
+					else
+					{
+						echo "<li><a href='#openlogin' id='openlogin'>login</a></li>";
+						echo "<li><a href='#openregister' id='openregister'>register</a></li>";
+					}
+					?>
                 </li>
                 <li>
                     <a href="#">home</a>
@@ -26,6 +36,13 @@
 				<li>
                     <a href="#similiar" id="opensimiliar">similiar</a>
                 </li>
+				<?php
+				if($a->isLogin())
+					{
+						echo "<li><a href='#'>settings</a></li>";
+						echo "<li><a href='".site_url('accounts/logout')."' id='logout'>logout</a></li>";
+					}
+				?>
             </ul>
         </div>
         <div id="description">
@@ -54,6 +71,10 @@
 		</div>
         <div id="slidecomments" class="slide-right">
         	<span class="close-slider"><a href="#" id="closeslidecomments"><img src="<?=base_url()?>/images/icons/close.png"></a></span>
+			<?php
+			if($a->isLogin())
+			{
+			?>
             <form method = "post" name="commentform" id="commentform">
             	<div class="smallbox">
             		<label>
@@ -67,6 +88,11 @@
 		            </label>
             	</div>
             </form>
+			<?php
+			}
+			else
+				echo "Please Login to comment."
+			?>
 			<div id="allcomments">
 				<div id="content-slider"></div>
 				<div id="content-scroll">
@@ -106,6 +132,25 @@
                 </div>
             </form>
         </div>
+		<div id="loginwindow">
+			<div class="smallbox">
+				<form method="post" action="<?=site_url('accounts/login')?>">
+					<input type="hidden" value="1" name="issend">
+					<span class="close-left"><a href="#" id="closelogin"><img src="<?=base_url()?>/images/icons/close.png"></a></span>
+		            <label>
+		                <span>email</span>
+		                <input type="text" class="input_text" name="email" id="email">
+		            </label>
+		            <label>
+		                <span>password</span>
+		                <input type="password" class="input_text" name="password" id="password">
+		            </label>
+					<label>
+						<input type="submit" class="button" value="login">
+					</label>
+				</form>
+			</div>
+		</div>
     </body>
 </html><!-- time for some javascript-->
 <script type="text/javascript">

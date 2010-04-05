@@ -188,6 +188,10 @@
 			if($a->loginif())
 			{
 				$e = "Thank you for Logging in";
+				if(isset($_SESSION['url']))
+				{
+					redirect($_SESSION['url']);
+				}
 			}
 			else
 			{
@@ -201,5 +205,19 @@
 		$data['a'] = $a;
 		$data['e'] = $e;
 		$this->load->view('account/login',$data);
+	}
+	
+	function logout()
+	{
+		$a = new Account();
+		$a->logout();
+		if(isset($_SESSION['url']))
+		{
+			redirect($_SESSION['url']);
+		}
+		else
+		{
+			echo "Successfully logout";
+		}
 	}
  }

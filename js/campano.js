@@ -1,6 +1,7 @@
-/**
+/*
  * @author parag
  */
+var base_url = "http://localhost/travelohic/index.php/";
 $(document).ready(function(){
     var iter = 0;
     var docHeight = $(document).height();
@@ -12,6 +13,7 @@ $(document).ready(function(){
     var hide_sliders = function(){
         $("div#similiar").hide();
         $("div.slide-right").hide();
+		$("div#loginwindow").hide();
     };
     
     hide_sliders();
@@ -55,6 +57,28 @@ $(document).ready(function(){
         if ($('div#moods').is(':visible')) {
             $("div#moods").hide("slide", {
                 direction: "right"
+            }, 1000);
+        }
+        else {
+            // do nothign
+        }
+    }
+	
+	var show_login = function(){
+        if ($('div#loginwindow').is(':visible')) {
+            // do nothing
+        }
+        else {
+            $("div#loginwindow").show("slide", {
+                direction: "left"
+            }, 1000);
+        }
+    }
+    
+    var hide_login = function(){
+        if ($('div#loginwindow').is(':visible')) {
+            $("div#loginwindow").hide("slide", {
+                direction: "left"
             }, 1000);
         }
         else {
@@ -127,7 +151,7 @@ $(document).ready(function(){
         var datastring = 'comment=' + cmnt + '&campaign_id=' + campaign_id + '&user_id=0';
         $.ajax({
             type: "POST",
-            url: "http://localhost/travelohic/index.php/destination/addComment",
+            url: base_url + "destination/addComment",
             data: datastring,
             success: function(){
                 alert(datastring);
@@ -139,6 +163,20 @@ $(document).ready(function(){
         change: handleSliderChange,
         slide: handleSliderSlide
     });
+	$("#closelogin").click(function(event){
+        hide_login();
+        event.preventDefault();
+    });
+	$("#openlogin").click(function(event){
+        show_login();
+        event.preventDefault();
+    });
+	$("#loginbtn").click(function(event){
+		$.ajax({
+			type: "POST",
+			url: base_url + "accounts/login",
+		});
+	});
     function handleSliderChange(e, ui){
         var maxScroll = $("#content-scroll").attr("scrollWidth") - $("#content-scroll").width();
         $("#content-scroll").animate({

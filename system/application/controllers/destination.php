@@ -8,11 +8,13 @@ class Destination extends Controller {
 
 	function Destination()
 	{
-		parent::Controller();	
+		parent::Controller();
+		session_start();
 	}
 	
 	function index($name)
 	{
+		$a = new Account;
 		if($name!="")
 		{
 			$c = new Campaign();
@@ -52,6 +54,8 @@ class Destination extends Controller {
 				$data['commentsNum'] = $com->count();
 			}
 		}
+		$data['a'] = $a;
+		$_SESSION['url'] = site_url('destination/index/'.$name);
 		$this->load->view('destination', $data);
 	}
 	

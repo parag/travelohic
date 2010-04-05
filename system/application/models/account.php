@@ -78,9 +78,8 @@
 	
 	function logout()
 	{
-		$_SESSION['email'] = "";
 		$_SESSION['key'] = "";
-		session_destroy();
+		//session_destroy();
 	}
 	
 	function isLogin()

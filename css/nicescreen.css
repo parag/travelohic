@@ -48,3 +48,5 @@ div.smallbox .button {width: 164px;background: #CC0000;height: 30px;font-size: 1
 #content-scroll {width: 190px; margin-top: 10px; overflow: hidden; border: solid 1px black;}
 #content-holder {width: 1000px; overflow: hidden;}
 .content-item {width: 170px; height: 270px; padding: 5px; float: left;}
+#loginwindow{position:absolute;top:20px;left:0;}
+.close-left{position: absolute;top: 0px;right: 0px;}
