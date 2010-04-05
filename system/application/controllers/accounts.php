@@ -146,7 +146,13 @@
 					$isErr=1;
 				}
 				if($isErr=="0")
+				{
 					$e = $e."<p>Photo saved successfully</p>";
+					if(isset($_SESSION['url']))
+					{
+						redirect($_SESSION['url']);
+					}
+				}
 			}
         }
 		$data['e'] = $e;
@@ -188,10 +194,6 @@
 			if($a->loginif())
 			{
 				$e = "Thank you for Logging in";
-				if(isset($_SESSION['url']))
-				{
-					redirect($_SESSION['url']);
-				}
 			}
 			else
 			{
@@ -219,5 +221,35 @@
 		{
 			echo "Successfully logout";
 		}
+	}
+	
+	function signup()
+	{
+		$a = new Account();
+		$e = "";
+		if($this->input->post('issend'))
+		{
+			$a->name = $this->input->post('name');
+			$a->email = $this->input->post('email');
+			$a->password = $this->input->post('password');
+			$a->mobile = $this->input->post('mobile');
+			$a->save();
+			$a->login();
+			foreach ($a->error->all as $err) 
+			{
+                $e = $e."<p>".$err."</p>";
+				
+			}
+			if($e=="")
+			{
+				if(isset($_SESSION['url']))
+				{
+					redirect($_SESSION['url']);
+				}
+				$e = "You have been registered";
+			}
+		}
+		$data['e'] = $e;
+		$this->load->view('account/signup',$data);
 	}
  }

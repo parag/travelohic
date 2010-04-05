@@ -132,8 +132,8 @@
                 </div>
             </form>
         </div>
-		<div id="loginwindow">
-			<div class="smallbox">
+		<div id="loginwindow" class="leftwindow">
+			<div class="box">
 				<form method="post" action="<?=site_url('accounts/login')?>">
 					<input type="hidden" value="1" name="issend">
 					<span class="close-left"><a href="#" id="closelogin"><img src="<?=base_url()?>/images/icons/close.png"></a></span>
@@ -149,6 +149,34 @@
 						<input type="submit" class="button" value="login">
 					</label>
 				</form>
+			</div>
+		</div>
+		<div id="registerwindow" class="leftwindow">
+			<div class="box">
+				<?php echo form_open_multipart('accounts/signup'); ?>
+            	<input type="hidden" name="issend" value="1">
+                <div class="box" style="">
+                    <label>
+                        <span>name</span>
+                        <input type="text" class="input_text" name="name" id="name">
+                    </label>
+                     <label>
+                        <span>email</span>
+                        <input type="text" class="input_text" name="email" id="email">
+                    </label>
+					 <label>
+                        <span>password</span>
+                        <input type="password" class="input_text" name="password" id="password">
+                    </label>
+					 <label>
+                        <span>mobile</span>
+                        <input type="text" class="input_text" name="mobile" id="mobile">
+                    </label>
+                    <label>
+                        <input type="submit" class="button" value="register">
+                    </label>
+                </div>
+            <?php echo form_close();?>
 			</div>
 		</div>
     </body>

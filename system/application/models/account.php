@@ -29,7 +29,7 @@
 		array(
 			'field' => 'mobile',
 			'label' => 'Mobile',
-			'rules' => array('required', 'numeric', 'min_length'=>3, 'max_length'=>15, 'unique'),
+			'rules' => array('numeric', 'min_length'=>3, 'max_length'=>15),
 		)
 	);
 	

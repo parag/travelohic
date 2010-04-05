@@ -14,6 +14,7 @@ $(document).ready(function(){
         $("div#similiar").hide();
         $("div.slide-right").hide();
 		$("div#loginwindow").hide();
+		$("div#registerwindow").hide();
     };
     
     hide_sliders();
@@ -78,6 +79,28 @@ $(document).ready(function(){
     var hide_login = function(){
         if ($('div#loginwindow').is(':visible')) {
             $("div#loginwindow").hide("slide", {
+                direction: "left"
+            }, 1000);
+        }
+        else {
+            // do nothign
+        }
+    }
+	
+	var show_register = function(){
+        if ($('div#registerwindow').is(':visible')) {
+            // do nothing
+        }
+        else {
+            $("div#registerwindow").show("slide", {
+                direction: "left"
+            }, 1000);
+        }
+    }
+    
+    var hide_register = function(){
+        if ($('div#registerwindow').is(':visible')) {
+            $("div#registerwindow").hide("slide", {
                 direction: "left"
             }, 1000);
         }
@@ -168,15 +191,19 @@ $(document).ready(function(){
         event.preventDefault();
     });
 	$("#openlogin").click(function(event){
+		hide_register();
         show_login();
         event.preventDefault();
     });
-	$("#loginbtn").click(function(event){
-		$.ajax({
-			type: "POST",
-			url: base_url + "accounts/login",
-		});
-	});
+	$("#closeregister").click(function(event){
+        hide_register();
+        event.preventDefault();
+    });
+	$("#openregister").click(function(event){
+		hide_login();
+        show_register();
+        event.preventDefault();
+    });
     function handleSliderChange(e, ui){
         var maxScroll = $("#content-scroll").attr("scrollWidth") - $("#content-scroll").width();
         $("#content-scroll").animate({
