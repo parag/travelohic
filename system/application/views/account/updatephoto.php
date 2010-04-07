@@ -12,8 +12,17 @@
                 <li>
                     welcome
                 </li>
-                <li>
-                    <a href="#">home</a>
+               <li>
+                    <a href="<?=site_url('welcome')?>">home</a>
+                </li>
+				 <li>
+                    <a href="<?=site_url('accounts/editprofile')?>">edit profile</a>
+                </li>
+				 <li>
+                    <a href="<?=site_url('accounts/updatephoto')?>">update photo</a>
+                </li>
+				 <li>
+                    <a href="<?=site_url('accounts/changepassword')?>">change password</a>
                 </li>
             </ul>
     	</div>

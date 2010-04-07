@@ -39,7 +39,7 @@
 				<?php
 				if($a->isLogin())
 					{
-						echo "<li><a href='#'>settings</a></li>";
+						echo "<li><a href='".site_url('accounts/editprofile')."'>settings</a></li>";
 						echo "<li><a href='".site_url('accounts/logout')."' id='logout'>logout</a></li>";
 					}
 				?>

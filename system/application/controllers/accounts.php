@@ -24,6 +24,7 @@
 			$a->url = $this->input->post('url');
 			$a->mobile = $this->input->post('mobile');
 			$a->country_id = $this->input->post('country_id');
+			$a->photo = "default.jpeg";
 			$a->save();
 			foreach ($a->error->all as $err) 
 			{
@@ -136,7 +137,7 @@
 				$config1['new_image'] = $uploadPath.md5($a->id).'.'.$tmpImage['image_type'];
 				$this->load->library('image_lib', $config1);
 				$this->image_lib->resize();
-				$this->image_lib->clear();print_r($this->image_lib);
+				$this->image_lib->clear();
 				$isErr = 0;
 				$a->photo =md5($a->id).".".$tmpImage['image_type'];
 				$a->save();
@@ -193,6 +194,10 @@
 			$a->password  =$this->input->post('password');
 			if($a->loginif())
 			{
+				if(isset($_SESSION['url']))
+				{
+					redirect($_SESSION['url']);
+				}
 				$e = "Thank you for Logging in";
 			}
 			else

@@ -15,12 +15,19 @@ $(document).ready(function(){
         $("div.slide-right").hide();
 		$("div#loginwindow").hide();
 		$("div#registerwindow").hide();
-    };
+    }
+	var setHolderWidth = function(){
+		var cssHold = {
+            'width': comments.num*180 + 'px'
+        }
+        $("#content-holder").css(cssHold);
+	}
     
     hide_sliders();
+	setHolderWidth();
     commentsPlayer();
     setCommentsContent();
-    
+	
     var show_similiar = function(){
         if ($('div#similiar').is(':visible')) {
             // do nothing

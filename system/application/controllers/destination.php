@@ -40,12 +40,15 @@ class Destination extends Controller {
 				$flag=0;
 				foreach($com->all as $comment)
 				{
+					$usr = new Account;
+					$usr->where('id', $comment->user_id)->get();
+					$preCom = "<img src = '".base_url()."/images/profile/".$usr->photo."' align='left'><i>says </i>";
 					if($flag)
 					{
 						$commentsStr=$commentsStr.",";
 					}
 					$flag=1;
-					$commentsStr = $commentsStr."\"".$comment->comment."\"";
+					$commentsStr = $commentsStr."\"".$preCom.$comment->comment."\"";
 					//$data['comments'][] = $comment->comment;
 					//$data['comments_uid'][] = $comment->user_id;
 				}
@@ -66,7 +69,7 @@ class Destination extends Controller {
 		$c->campaign_id = $this->input->post("campaign_id");
 		$c->user_id = $this->input->post('user_id');
 		$c->save();
-		echo "q";
+		echo "1";
 	}
 }
 
