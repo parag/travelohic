@@ -145,7 +145,7 @@ class Campaigns extends Controller {
 					}
 			}
 			echo "<font color='red'>".$error."</font>";
-			$this->load->view('admin/campaigns/add');
+			$this->load->view('admin/campaigns/addnoimg');
 		}
 	
 	function edit()
