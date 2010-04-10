@@ -2,7 +2,9 @@
 
 TODOs: 
 1. Display pictures of users on comments - done
-2. Deploy to production
+2. Deploy to production - done
+2.1. Add small photographs too along with campaign big photos
+2.2. Testing of deployment. Upload one campaign and create two accounts.
 3. Add email verification intermediate step for registration
 4. Implement forgot password
 5. Protect admin page by a static password string - done

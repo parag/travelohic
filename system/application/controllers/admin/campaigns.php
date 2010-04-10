@@ -42,6 +42,7 @@ class Campaigns extends Controller {
 			 */
 			$config['upload_path'] = './uploads/tmp';
 			$uploadPath = './images/bgs/';
+			$smallUploadPath = './images/bgsmall/';
 			$config['allowed_types'] = 'png';
 			$config['max_size']	= '2048';
 			$config['max_width']  = '4056';
@@ -65,6 +66,13 @@ class Campaigns extends Controller {
 				$config1['height'] = 800;
 				$config1['new_image'] = $uploadPath.$name.'.'.$tmpImage['image_type'];
 				$this->load->library('image_lib', $config1);
+				$this->image_lib->resize();
+				$this->image_lib->clear();
+				$config2 = $config1;
+				$config2['new_image'] = $smallUploadPath.$name.'.'.$tmpImage['image_type'];
+				$config2['width'] = '100';
+				$config2['height'] = '80';
+				$this->load->library('image_lib', $config2);
 				$this->image_lib->resize();
 				$this->image_lib->clear();
 				$c->photo = $name.'.'.$tmpImage['image_type'];
