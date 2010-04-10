@@ -38,8 +38,8 @@ $active_group = "default";
 $active_record = TRUE;
 
 $db['default']['hostname'] = "localhost";
-$db['default']['username'] = "admin";
-$db['default']['password'] = "wordpass";
+$db['default']['username'] = "travelohic";
+$db['default']['password'] = "Webar00";
 $db['default']['database'] = "travelohic";
 $db['default']['dbdriver'] = "mysql";
 $db['default']['dbprefix'] = "";
