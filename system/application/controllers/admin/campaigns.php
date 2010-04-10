@@ -102,6 +102,51 @@ class Campaigns extends Controller {
 		echo "<font color='red'>".$error."</font>";
 		$this->load->view('admin/campaigns/add');
 	}
+
+	function addnoimg()
+	{
+		if(!$this->checkLogin())
+			{
+				redirect('admin/campaigns/login');
+			} 
+			$c = new Campaign();
+			$isErr = 0;
+			$error = "";
+			if($this->input->post('savecampaign'))
+			{
+				$c->name = $this->input->post('name');
+				$c->description = $this->input->post('comment');
+				$c->countryid = $this->input->post('country');
+				$c->categoryid = $this->input->post('category');
+				$c->isInfo = $this->input->post('isinfo');
+			
+				$name = strtolower(str_replace(" ","_",$c->name));
+				$c->nickname = $name;
+				$c->save();
+					$isErr = 0;
+					foreach ($c->error->all as $e)
+					{
+					    $error = $error.$e . "<br />";
+						$isErr=1;
+					}
+					if($isErr=="0")
+						$error = "Campaign saved successfully";
+				
+					/*
+					 * @paragarora: saving tags now for the campaign page
+					 */
+					$tagstr = $this->input->post('tags');
+					$tags = explode(" ", $tagstr);
+					foreach($tags as $tag)
+					{
+						$t = new Tag();
+						$t->name = $tag;
+						$t->save($c);
+					}
+			}
+			echo "<font color='red'>".$error."</font>";
+			$this->load->view('admin/campaigns/add');
+		}
 	
 	function edit()
 	{
