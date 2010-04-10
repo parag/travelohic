@@ -38,7 +38,7 @@ $tags = split(' ', $default_tags);
         </div>
         <div id="form">
             <!--<?php echo form_open_multipart('admin/campaigns/add'); ?>-->
-		<form method="POST" action="<?=site_url('admin/campaigns/add')?>>">
+		<form method="POST" action="<?=site_url('admin/campaigns/add')?>">
             	<input type="hidden" name="savecampaign" value="1">
                 <div class="box">
                     <label>
