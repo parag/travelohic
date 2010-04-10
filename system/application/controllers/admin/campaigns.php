@@ -29,10 +29,6 @@ class Campaigns extends Controller {
 		$c = new Campaign();
 		$isErr = 0;
 		$error = "";
-		echo "POST: ";
-		print_r($this->input->post());
-		
-		echo "<font color='red'>".$error."</font>";
 		$this->load->view('admin/campaigns/add');
 	}
 	
