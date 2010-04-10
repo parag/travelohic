@@ -5,7 +5,7 @@ TODOs:
 2. Deploy to production
 3. Add email verification intermediate step for registration
 4. Implement forgot password
-5. Protect admin page by a static password string
+5. Protect admin page by a static password string - done
 6. Add option to view campaign pages
 7. Add option to edit campaign pages
 8. Edit settings pages template.
