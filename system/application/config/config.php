@@ -11,7 +11,7 @@
 |	http://example.com/
 |
 */
-$config['base_url']	= "http://travelohic.webfactional.com/";
+$config['base_url']	= "http://localhost/travelohic/";
 
 /*
 |--------------------------------------------------------------------------
