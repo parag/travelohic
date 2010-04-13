@@ -54,14 +54,18 @@ $tags = split(' ', $default_tags);
                             <?php $this->load->view('data/categories'); ?>
                         </select>
                     </label>
-					<label>
+		    <label>
                         <span>info page?</span>
                         <select id="isinfo" name="isinfo" class="input_text">
                             <option value="1">yes</option>
 							<option value="0">no</option>
                         </select>
                     </label>
-					<label>
+		    <label>
+                        <span>photo</span>
+                        <input type="text" class="input_text" name="photo" id="photo">
+                    </label>
+		    <label>
                         <span>country</span>
                         <select id="country" name="country" class="input_text">
                             <?php $this->load->view('data/countries'); ?>
