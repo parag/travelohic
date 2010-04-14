@@ -17,7 +17,7 @@
 		$e = "";
 		if($this->input->post('issend'))
 		{
-			$a->name = $this->input->post('name');
+			$a->name = xss_clean($this->input->post('name'));
 			$a->email = $this->input->post('email');
 			$a->password = $this->input->post('password');
 			$a->verify_password = $this->input->post('verify_password');

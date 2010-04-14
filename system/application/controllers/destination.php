@@ -65,7 +65,7 @@ class Destination extends Controller {
 	function addComment()
 	{
 		$c = new Comment();
-		$c->comment = $this->input->post("comment");
+		$c->comment = xss_clean($this->input->post("comment"));
 		$c->campaign_id = $this->input->post("campaign_id");
 		$c->user_id = $this->input->post('user_id');
 		$c->save();
