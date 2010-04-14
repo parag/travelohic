@@ -1,7 +1,6 @@
 /*
  * @author parag
  */
-var base_url = "http://localhost/travelohic/index.php/";
 $(document).ready(function(){
     var iter = 0;
     var docHeight = $(document).height();

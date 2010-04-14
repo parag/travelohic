@@ -43,7 +43,7 @@ class Campaigns extends Controller {
 			$config['upload_path'] = './uploads/tmp';
 			$uploadPath = './images/bgs/';
 			$smallUploadPath = './images/bgsmall/';
-			$config['allowed_types'] = 'png';
+			$config['allowed_types'] = 'png|jpg|jpeg';
 			$config['max_size']	= '2048';
 			$config['max_width']  = '4056';
 			$config['max_height']  = '3072';
@@ -70,8 +70,8 @@ class Campaigns extends Controller {
 				$this->image_lib->clear();
 				$config2 = $config1;
 				$config2['new_image'] = $smallUploadPath.$name.'.'.$tmpImage['image_type'];
-				$config2['width'] = '100';
-				$config2['height'] = '80';
+				$config2['width'] = 100;
+				$config2['height'] = 80;
 				$this->load->library('image_lib', $config2);
 				$this->image_lib->resize();
 				$this->image_lib->clear();
@@ -122,7 +122,7 @@ class Campaigns extends Controller {
 			
 				$name = strtolower(str_replace(" ","_",$c->name));
 				$c->nickname = $name;
-				$c->photo = $this->input->post('photo');
+				$c->photo = $this->input->post('');
 				$c->save();
 					$isErr = 0;
 					foreach ($c->error->all as $e)
