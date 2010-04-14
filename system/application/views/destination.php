@@ -186,7 +186,7 @@
 			num: <?=$commentsNum?>,
 			comments: <?=$commentsStr?>
 		};
-	var campaign_id = '<?=$campaign_id?>';
+	var campaign_id = '<?=$campaign_id?>index.php/';
 	var base_url = '<?=base_url()?>';
 </script>
 <script src="<?=base_url()?>js/jquery.min.js"></script>
