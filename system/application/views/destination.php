@@ -76,6 +76,7 @@
 			{
 			?>
             <form method = "post" name="commentform" id="commentform">
+		<input type="hidden" name="user_id" value="<?=$a->id?>">
             	<div class="smallbox">
             		<label>
 		                <span>comment</span>
