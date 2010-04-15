@@ -206,7 +206,7 @@
 			}
 			else
 			{
-				$e = "Error";
+				$e = "Error. You may not have completed all the registration steps. Try change password too.";
 				foreach($a->error->all as $err)
 				{
 					$e = $e."<p>".$err."</p>";
