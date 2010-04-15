@@ -269,7 +269,8 @@
 		$e = "";
 		if($this->input->post('issend'))
 		{
-			$a->where('email',$this->input->post('email'))->get();
+			$email = $this->input->post('email');
+			$a->where('email',$email)->get();
 			if($a->exists())
 			{
 				$url = site_url('accounts/password_request/'.$a->email.'/'.$a->salt);

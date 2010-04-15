@@ -14,7 +14,7 @@ class Destination extends Controller {
 	
 	function index($name)
 	{
-		$a = new Account;
+		$a = new Account();
 		if($name!="")
 		{
 			$c = new Campaign();
