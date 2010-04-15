@@ -60,6 +60,8 @@
         }
         else
         {
+        	if(!$this->is_verified)
+				return FALSE;
         	$this->login();
             // Login succeeded
             return TRUE;

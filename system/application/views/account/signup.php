@@ -26,7 +26,7 @@
         </div>
         <div id="form">
         	
-            <?php echo form_open_multipart('accounts/signup'); ?><font color="red"><?=$e?></font>
+            <?php echo form_open('accounts/signup'); ?><font color="red"><?=$e?></font>
             	<input type="hidden" name="issend" value="1">
                 <div class="box" style="">
                     <label>

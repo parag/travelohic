@@ -33,6 +33,7 @@
             if ($e == "") 
 			{
 				$e="Succesfully registered. Please check back your email to complete verification.";
+				$this->_register_confirm_ask($a->email, $a->salt);
 				/*
 				 * upload image
 				 */
@@ -173,6 +174,9 @@
 		{
 			$a->password = $this->input->post('password');
 			$a->verify_password = $this->input->post('verify_password');
+			/*
+			 * if_verified should be set 1 in all the cases
+			 */
 			$a->save();
 			foreach($a->error->all as $err)
 			{
@@ -239,7 +243,7 @@
 			$a->password = $this->input->post('password');
 			$a->mobile = $this->input->post('mobile');
 			$a->save();
-			$a->login();
+			//$a->login();
 			foreach ($a->error->all as $err) 
 			{
                 $e = $e."<p>".$err."</p>";
@@ -247,14 +251,94 @@
 			}
 			if($e=="")
 			{
-				if(isset($_SESSION['url']))
+				$this->_register_confirm_ask($a->email, $a->salt);
+				/*if(isset($_SESSION['url']))
 				{
 					redirect($_SESSION['url']);
-				}
-				$e = "You have been registered";
+				}*/
+				$e = "Please check your email to complete registration process";
 			}
 		}
 		$data['e'] = $e;
 		$this->load->view('account/signup',$data);
+	}
+	
+	function forgot_password()
+	{
+		$a = new Account();
+		$e = "";
+		if($this->input->post('issend'))
+		{
+			$a->where('email',$this->input->post)->get();
+			if($a->exists())
+			{
+				$url = site_url('accounts/password_request/'.$a->email.'/'.$a->salt);
+				$subject = "Change Password Request";
+				$message = "Hello ".$a->name."\n";
+				$message = $message."Click the link below to change your password\n\n";
+				$message = $message.$url."\n\n";
+				$message = $message."Thanks\nTeam Travelohic\n";
+				$this->_user_email($a->email, $subject, $message);
+				$e = "Please check your email to complete process of changin your password";
+			}
+			else
+			{
+				$e = "This email id does not exist";
+			}
+		}
+		$data['e'] = $e;
+		$this->load->view('account/forgot_password',$data);
+	}
+	
+	function verify_account($email, $salt)
+	{
+		$a = new Account();
+		$a->where('email',$email)->get();
+		if($a->salt==$salt)
+		{
+			$a->is_verified = "1";
+			$a->save();
+			$a->login();
+		}
+		redirect(base_url());
+	}
+	
+	function password_request($email, $salt)
+	{
+		$a = new Account();
+		$a->where('email',$email)->get();
+		if($a->salt==$salt)
+		{
+			$a->is_verified = "1";
+			$a->save();
+			$a->login();
+		}
+		redirect('accounts/changepassword');
+	}
+	
+	function _register_confirm_ask($email, $salt)
+	{
+		$subject = "Your last step for registration";
+		$message = "Hello,\n
+					Please click on the link below to do email verification \n\n";
+		$message = $message.site_url('accounts/verify_account/'.$email.'/'.$salt);
+		$message = $message."\n\n";
+		$message = $message."We take immense pride in having you our esteemed account holder\n";
+		$message = $message."Your next step will be to comment and share to keep growing the community\n\n";
+		$message = $message."Thanks\nTravelohic Team";
+		$this->_user_email($email, $subject, $message);
+	}
+	
+	function _user_email($to, $subject, $message)
+	{
+		$this->load->library('email');
+
+		$this->email->from('no-reply@travelohic.com', 'Travelohic');
+		$this->email->to($to);
+		
+		$this->email->subject($subject);
+		$this->email->message($message);
+		
+		$this->email->send();
 	}
  }

@@ -34,7 +34,7 @@
             </div>
         </div>
         <div id="form">
-            <?php echo form_open_multipart('accounts/editprofile'); ?>
+            <?php echo form_open('accounts/editprofile'); ?>
             	<input type="hidden" name="issend" value="1">
                 <div class="box" style="">
                     <label>
