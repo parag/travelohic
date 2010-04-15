@@ -11,7 +11,7 @@
 |	http://example.com/
 |
 */
-$config['base_url']	= "http://173.203.97.196/travelohic/htdocs/";
+$config['base_url']	= "http://travelohic.com/";
 
 /*
 |--------------------------------------------------------------------------
