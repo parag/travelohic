@@ -177,7 +177,7 @@ $(document).ready(function(){
     });
     $("#commentbutton").click(function(event){
         var cmnt = $("#commentarea").val();
-        var datastring = 'comment=' + cmnt + '&campaign_id=' + campaign_id + '&user_id=0';
+        var datastring = 'comment=' + cmnt + '&campaign_id=' + campaign_id + '&user_id=' + user_id;
         $.ajax({
             type: "POST",
             url: base_url + "destination/addComment",

@@ -76,7 +76,6 @@
 			{
 			?>
             <form method = "post" name="commentform" id="commentform">
-		<input type="hidden" name="user_id" value="<?=$a->id?>">
             	<div class="smallbox">
             		<label>
 		                <span>comment</span>
@@ -189,6 +188,7 @@
 		};
 	var campaign_id = '<?=$campaign_id?>';
 	var base_url = '<?=base_url()?>index.php/';
+	var user_id = '<?=$a->id?>';
 </script>
 <script src="<?=base_url()?>js/jquery.min.js"></script>
 <script src="<?=base_url()?>js/jquery-ui.min.js"></script>
