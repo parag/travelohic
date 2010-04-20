@@ -17,3 +17,9 @@ set up email on slicehost - figured out how -- done
 ||. Start creating destinations location + Keep inserting comments in them.
 9. Create share on facebook widget.
 10. Create the complete system in terms of a website.
+
+------
+To fetch image
+$ wget imageurl.jpg
+$ convert - resize 1024x800 origname destinationimg
+$ convert - resize 100x80 origname destinationthumbimg

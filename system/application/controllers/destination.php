@@ -37,7 +37,7 @@ class Destination extends Controller {
 				$com->where('campaign_id', $c->id)->get();
 				//$comments = new ArrayObject();
 				$commentsStr = "[";
-				$flag=0;
+				$numComments=0;
 				foreach($com->all as $comment)
 				{
 					$usr = new Account;
@@ -47,16 +47,16 @@ class Destination extends Controller {
 					{
 						$commentsStr=$commentsStr.",";
 					}
-					$flag=1;
+					$numComments++;
 					$commentsStr = $commentsStr."\"".$preCom.$comment->comment."\"";
 					//$data['comments'][] = $comment->comment;
 					//$data['comments_uid'][] = $comment->user_id;
 				}
-				if($com->count()<1)
+				if(!$numComments)
 					$commentsStr = $commentsStr."Be the first to comment.";
 				$commentsStr=$commentsStr."]";
 				$data['commentsStr'] = $commentsStr;
-				$data['commentsNum'] = $com->count();
+				$data['commentsNum'] = $numComments;
 			}
 		}
 		$data['a'] = $a;
