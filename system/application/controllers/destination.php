@@ -53,7 +53,10 @@ class Destination extends Controller {
 					//$data['comments_uid'][] = $comment->user_id;
 				}
 				if(!$numComments)
+				{
 					$commentsStr = $commentsStr."Be the first to comment.";
+					$numComments = 1;
+				}
 				$commentsStr=$commentsStr."]";
 				$data['commentsStr'] = $commentsStr;
 				$data['commentsNum'] = $numComments;
