@@ -43,7 +43,7 @@ class Destination extends Controller {
 					$usr = new Account;
 					$usr->where('id', $comment->user_id)->get();
 					$preCom = "<img src = '".base_url()."/images/profile/".$usr->photo."' align='left'><i>".$usr->name." says </i>";
-					if($flag)
+					if($numComments)
 					{
 						$commentsStr=$commentsStr.",";
 					}
