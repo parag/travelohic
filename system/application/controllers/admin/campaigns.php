@@ -122,7 +122,7 @@ class Campaigns extends Controller {
 			
 				$name = strtolower(str_replace(" ","_",$c->name));
 				$c->nickname = $name;
-				$c->photo = $this->input->post('');
+				$c->photo = $this->input->post('photo');
 				$c->save();
 					$isErr = 0;
 					foreach ($c->error->all as $e)
