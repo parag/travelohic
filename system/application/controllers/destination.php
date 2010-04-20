@@ -54,7 +54,7 @@ class Destination extends Controller {
 				}
 				if(!$numComments)
 				{
-					$commentsStr = $commentsStr."Be the first to comment.";
+					$commentsStr = $commentsStr."\"Be the first to comment.\"";
 					$numComments = 1;
 				}
 				$commentsStr=$commentsStr."]";
