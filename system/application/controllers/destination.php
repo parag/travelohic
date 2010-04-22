@@ -15,7 +15,7 @@ class Destination extends Controller {
 		//include Facebook library
 		require_once APPPATH.'libraries/facebook/appinclude.php';
 
-		$facebook = new Facebook(FBAPPID,FBAPPSECRET,true);
+		$this->facebook = new Facebook(FBAPPID,FBAPPSECRET,true);
 
 		//session_start();
 	}
@@ -87,7 +87,7 @@ class Destination extends Controller {
 
 	function fbtest()
 	{
-		$session = $facebook->getSession();
+		$session = $this->facebook->getSession();
 		$fbOAuthUrl = "https://graph.facebook.com/oauth/authorize?client_id=".FBAPPID."redirect_uri=".site_url('destination/fbtest/p')."&scope=email,user_birthday,user_hometown";
 
 		$me = null;
