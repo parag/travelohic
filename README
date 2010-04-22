@@ -15,11 +15,11 @@ Set up domain on slicehost - done
 set up email on slicehost - figured out how -- done
 ------
 ||. Start creating destinations location + Keep inserting comments in them.
-9. Create share on facebook widget.
-10. Create the complete system in terms of a website.
+9. 
 
 ------
 To fetch image
 $ wget imageurl.jpg
-$ convert - resize 1024x800 origname destinationimg
-$ convert - resize 100x80 origname destinationthumbimg
+$ convert - resize 1024x768 origname destinationimg
+$ convert - Create share on facebook widget.
+10. Create the complete system in terms of a website.resize 100x80 origname destinationthumbimg

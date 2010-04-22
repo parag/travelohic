@@ -5,10 +5,22 @@
  */
 
 class Destination extends Controller {
+	
+	public $facebook;
 
 	function Destination()
 	{
 		parent::Controller();
+
+		//include Facebook library
+		require_once APPPATH.'libraries/facebook/appinclude.php';
+
+		$facebook = new Facebook(array(
+		  'appId' => FBAPPID,
+		  'secret' => FBAPPSECRET,
+		  'cookie' => true,
+		));
+
 		session_start();
 	}
 	
@@ -75,6 +87,34 @@ class Destination extends Controller {
 		$c->user_id = $this->input->post('user_id');
 		$c->save();
 		echo "1";
+	}
+
+	function fbtest()
+	{
+		$session = $facebook->getSession();
+		$fbOAuthUrl = "https://graph.facebook.com/oauth/authorize?client_id=".FBAPPID."redirect_uri=".site_url('destination/fbtest/p')."&scope=email,user_birthday,user_hometown";
+
+		$me = null;
+		// Session based API call.
+		if ($session) {
+		  try {
+		    $uid = $facebook->getUser();
+		    $me = $facebook->api('/me');
+		  } catch (FacebookApiException $e) {
+		    error_log($e);
+		  }
+		} else {
+			redirect($fbOAuthUrl);
+		}
+
+		// login or logout url will be needed depending on current user state.
+		if ($me) {
+		  $logoutUrl = $facebook->getLogoutUrl();
+		} else {
+		  $loginUrl = $facebook->getLoginUrl();
+		}
+
+
 	}
 }
 

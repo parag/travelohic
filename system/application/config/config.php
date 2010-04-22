@@ -1,5 +1,8 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+define('FBAPPID', '111283058909139');
+define('FBAPPSECRET', 'b8d26c7a262e8e8cf1f2235344e93c6f');
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
