@@ -13,9 +13,13 @@ class Destination extends Controller {
 		parent::Controller();
 
 		//include Facebook library
-		require_once APPPATH.'libraries/facebook/appinclude.php';
+		require_once APPPATH.'libraries/facebook.php';
 
-		$this->facebook = new Facebook(FBAPPID,FBAPPSECRET,true);
+		$facebook = new Facebook(array(
+		  'appId'  => FBAPPID,
+		  'secret' => FBAPPSECRET,
+		  'cookie' => true,
+		));
 
 		//session_start();
 	}
