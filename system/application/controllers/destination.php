@@ -15,11 +15,7 @@ class Destination extends Controller {
 		//include Facebook library
 		require_once APPPATH.'libraries/facebook/appinclude.php';
 
-		$facebook = new Facebook(array(
-		  'appId' => FBAPPID,
-		  'secret' => FBAPPSECRET,
-		  'cookie' => true,
-		));echo FBAPPSECRET;
+		$facebook = new Facebook(FBAPPID,FBAPPSECRET,true);
 
 		//session_start();
 	}
