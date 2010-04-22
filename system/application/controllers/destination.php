@@ -19,9 +19,9 @@ class Destination extends Controller {
 		  'appId' => FBAPPID,
 		  'secret' => FBAPPSECRET,
 		  'cookie' => true,
-		));
+		));echo FBAPPSECRET;
 
-		session_start();
+		//session_start();
 	}
 	
 	function index($name)
