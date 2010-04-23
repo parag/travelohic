@@ -150,6 +150,10 @@
 						<input type="submit" class="button" value="login">
 					</label>
 				</form>
+				or 
+				<a href="<?php echo $fb_connect; ?>">
+				<img src="http://static.ak.fbcdn.net/rsrc.php/zB6N8/hash/4li2k73z.gif">
+				</a>
 			</div>
 		</div>
 		<div id="registerwindow" class="leftwindow">
@@ -178,6 +182,10 @@
                     </label>
                 </div>
             <?php echo form_close();?>
+			or 
+				<a href="<?php echo $fb_connect; ?>">
+				<img src="http://static.ak.fbcdn.net/rsrc.php/zB6N8/hash/4li2k73z.gif">
+				</a>
 			</div>
 		</div>
     </body>
