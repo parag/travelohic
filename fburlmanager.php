@@ -1,13 +1,8 @@
-<?php
-
+<?php 
 require 'system/application/libraries/facebook.php';
 
 // Create our Application instance.
-$facebook = new Facebook(array(
-  'appId' => '111283058909139',
-  'secret' => 'b8d26c7a262e8e8cf1f2235344e93c6f',
-  'cookie' => true,
-));
+$facebook = new Facebook(array('appId'=>'111283058909139', 'secret'=>'b8d26c7a262e8e8cf1f2235344e93c6f', 'cookie'=>true, ));
 
 // We may or may not have this data based on a $_GET or $_COOKIE based session.
 //
@@ -20,73 +15,26 @@ $session = $facebook->getSession();
 
 $me = null;
 // Session based API call.
-if ($session) {
-  try {
-    $uid = $facebook->getUser();
-    $me = $facebook->api('/me');
-  } catch (FacebookApiException $e) {
-    error_log($e);
-  }
+if ($session)
+{
+    try
+    {
+        $uid = $facebook->getUser();
+        $me = $facebook->api('/me');
+    }
+    catch(FacebookApiException $e)
+    {
+        error_log($e);
+    }
 }
 
-// login or logout url will be needed depending on current user state.
-if ($me) {
-  $logoutUrl = $facebook->getLogoutUrl();
-} else {
-  $loginUrl = $facebook->getLoginUrl();
+if ($me)
+{
+    header("Location: http://travelohic.com/index.php/accounts/fb_register/".$me["name"]."/".$me["email"]."/".$me["id"]."/".$me["birthday"]);
 }
-
-// This call will always work since we are fetching public data.
-$naitik = $facebook->api('/naitik');
+else
+{
+    die("Unknown Error occured. Error has been logged and we are working to make your experience better");
+}
 
 ?>
-<!doctype html>
-<html>
-<head>
-<title>php-sdk</title>
-<style>
-body {
-font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
-}
-h1 a {
-text-decoration: none;
-color: #3b5998;
-}
-h1 a:hover {
-text-decoration: underline;
-}
-</style>
-</head>
-<body>
-<h1><a href="">php-sdk</a></h1>
-
-<?php if ($me): ?>
-<a href="<?php echo $logoutUrl; ?>">
-<img src="http://static.ak.fbcdn.net/rsrc.php/z2Y31/hash/cxrz4k7j.gif">
-</a>
-<?php else: ?>
-<a href="<?php echo $loginUrl; ?>">
-<img src="http://static.ak.fbcdn.net/rsrc.php/zB6N8/hash/4li2k73z.gif">
-</a>
-<?php endif ?>
-
-<h3>Session</h3>
-<?php if ($me): ?>
-<pre><?php print_r($session); ?></pre>
-
-<h3>You</h3>
-<img src="https://graph.facebook.com/<?php echo $uid; ?>/picture">
-<?php echo $me['name']; ?>
-
-<h3>Your User Object</h3>
-<pre><?php print_r($me["name"]); ?></pre>
-<?php else: ?>
-<strong><em>You are not Connected.</em></strong>
-<?php endif ?>
-
-<h3>Naitik</h3>
-<img src="https://graph.facebook.com/naitik/picture">
-<?php echo $naitik['name']; ?>
-</body>
-</html>
-

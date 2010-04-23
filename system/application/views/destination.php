@@ -150,7 +150,8 @@
 						<input type="submit" class="button" value="login">
 					</label>
 				</form>
-				or 
+				<br/>
+				<h2>or</h2> <br/>
 				<a href="<?php echo $fb_connect; ?>">
 				<img src="http://static.ak.fbcdn.net/rsrc.php/zB6N8/hash/4li2k73z.gif">
 				</a>
@@ -182,7 +183,8 @@
                     </label>
                 </div>
             <?php echo form_close();?>
-			or 
+			<br/>
+			<h2>or</h2> <br/>
 				<a href="<?php echo $fb_connect; ?>">
 				<img src="http://static.ak.fbcdn.net/rsrc.php/zB6N8/hash/4li2k73z.gif">
 				</a>

@@ -252,10 +252,10 @@
 			if($e=="")
 			{
 				$this->_register_confirm_ask($a->email, $a->salt);
-				/*if(isset($_SESSION['url']))
+				if(isset($_SESSION['url']))
 				{
 					redirect($_SESSION['url']);
-				}*/
+				}
 				$e = "Please check your email to complete registration process";
 			}
 		}
@@ -341,5 +341,35 @@
 		$this->email->message($message);
 		
 		$this->email->send();
+	}
+	
+	function fb_register($name, $email, $fb_uis, $fb_dob)
+	{
+		$a = new Account();
+		$a->where('fb_uis',$fb_uis)->get();
+		if($a->exists())
+		{
+			$a->login();
+		}
+		else
+		{
+			$a->name = $name;
+			$a->email = $email;
+			$a->fb_uis = $fb_uis;
+			$a->fb_dob = $fb_dob;
+			$a->password = md5(uniqid(rand(), true));
+			$a->salt = md5(uniqid(rand(), true));
+			$a->save();
+			$a->login();
+		}
+		
+		if(isset($_SESSION['url']))
+		{
+			redirect($_SESSION['url']);
+		}
+		else
+		{
+			redirect(base_url());
+		}
 	}
  }

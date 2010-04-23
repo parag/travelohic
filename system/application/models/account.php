@@ -74,8 +74,8 @@
 		$_SESSION['key'] = $this->salt;
 		$_SESSION['logged_in'] = 1;
 		// set the domain also with cookie
-		setcookie("email", $this->email, time()+60*60*24*30);
-		setcookie("key", $this->salt, time()+60*60*24*30);
+		setcookie("email", $this->email, time()+60*60*24*60);
+		setcookie("key", $this->salt, time()+60*60*24*60);
 	}
 	
 	function logout()
