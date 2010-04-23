@@ -1,5 +1,6 @@
 <?php 
 require_once 'system/application/libraries/facebook.php';
+require_once 'system/application/config/config.php';
 
 $facebook = new Facebook(array('appId'=>FBAPPID, 'secret'=>FBAPPSECRET, 'cookie'=>true, ));
 
