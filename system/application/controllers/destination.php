@@ -100,6 +100,7 @@ class Destination extends Controller {
 		  try {
 		    $uid = $facebook->getUser();
 		    $me = $facebook->api('/me');
+			print_r($me);
 		  } catch (FacebookApiException $e) {
 		    error_log($e);
 		  }
