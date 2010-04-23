@@ -15,6 +15,9 @@ $me = null;
 if ($_GET['code'])
 {
     $code = $_GET['code'];
-	echo $code;
+    echo $code;
+    $request = "http://graph.facebook.com/me?access_token=".$code;
+    $html = file_get_contents($request);
+	print_r($html);
 }
 ?>
