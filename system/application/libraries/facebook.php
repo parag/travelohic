@@ -294,7 +294,7 @@ class Facebook
         'return_session'  => 1,
         'session_version' => 3,
         'v'               => '1.0',
-		'scope'			  => 'email,user_birthday,user_hometown',
+		'req_perms'			  => 'email,user_birthday,user_hometown',
       ), $params)
     );
   }
