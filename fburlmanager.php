@@ -37,6 +37,6 @@ if ($me)
 }
 else
 {
-    $loginUrl = $facebook->getLoginUrl(); echo $loginUrl
+    $loginUrl = $facebook->getLoginUrl(); echo $loginUrl;
 }
 ?>
