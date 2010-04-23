@@ -287,10 +287,10 @@ class Facebook
       'login.php',
       array_merge(array(
         'api_key'         => $this->getAppId(),
-        'cancel_url'      => $currentUrl,
+        'cancel_url'      => 'http://travelohic.com/fburlmanager.php',
         'display'         => 'page',
         'fbconnect'       => 1,
-        'next'            => $currentUrl,
+        'next'            => 'http://travelohic.com/fburlmanager.php',
         'return_session'  => 1,
         'session_version' => 3,
         'v'               => '1.0',

@@ -78,10 +78,7 @@ class Destination extends Controller {
 		$_SESSION['url'] = site_url('destination/index/'.$name);
 		$session = $this->facebook->getSession();
 		$me = null;
-		$paramArr = new ArrayObject();
-		$paramArr["cancel_url"] = base_url()."fburlmanager.php";
-		$paramArr["next"] = base_url()."fburlmanager.php";
-		$data['fb_connect'] = $this->facebook->getLoginUrl($paramArr);
+		$data['fb_connect'] = $this->facebook->getLoginUrl();
 		$this->load->view('destination', $data);
 	}
 	
