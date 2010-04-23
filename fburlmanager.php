@@ -79,7 +79,7 @@ text-decoration: underline;
 <?php echo $me['name']; ?>
 
 <h3>Your User Object</h3>
-<pre><?php print_r($me); ?></pre>
+<pre><?php print_r($me["name"]); ?></pre>
 <?php else: ?>
 <strong><em>You are not Connected.</em></strong>
 <?php endif ?>
