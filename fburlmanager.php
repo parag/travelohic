@@ -27,7 +27,7 @@ if ($session)
 }
 else
 {
-    redirect($fbOAuthUrl);
+	Header( "Location: ".$fbOAuthUrl );
 }
 
 // login or logout url will be needed depending on current user state.
