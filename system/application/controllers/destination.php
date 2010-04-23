@@ -92,7 +92,7 @@ class Destination extends Controller {
 	function fbtest()
 	{
 		$session = $this->facebook->getSession();
-		$fbOAuthUrl = "https://graph.facebook.com/oauth/authorize?client_id=".FBAPPID."&redirect_uri=".site_url('destination/fbtest/key#pairs')."&scope=email,user_birthday,user_hometown";
+		$fbOAuthUrl = "https://graph.facebook.com/oauth/authorize?client_id=".FBAPPID."&redirect_uri=".site_url('destination/fbtest/key#pairs/vals/')."&scope=email,user_birthday,user_hometown";
 
 		$me = null;
 		// Session based API call.
