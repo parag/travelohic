@@ -12,31 +12,9 @@ $fbOAuthUrl = "https://graph.facebook.com/oauth/authorize?client_id=".FBAPPID."&
 
 $me = null;
 // Session based API call.
-if ($session)
+if ($_GET['code'])
 {
-    try
-    {
-        $uid = $facebook->getUser();
-        $me = $facebook->api('/me');
-		print_r($me);
-    }
-    catch(FacebookApiException $e)
-    {
-        error_log($e);
-    }
-}
-else
-{
-	Header( "Location: ".$fbOAuthUrl );
-}
-
-// login or logout url will be needed depending on current user state.
-if ($me)
-{
-    $logoutUrl = $facebook->getLogoutUrl(); echo $logoutUrl;
-}
-else
-{
-    $loginUrl = $facebook->getLoginUrl(); echo $loginUrl;
+    $code = $_GET['code'];
+	echo $code;
 }
 ?>
