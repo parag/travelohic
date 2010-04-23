@@ -21,7 +21,7 @@ class Destination extends Controller {
 		  'cookie' => true,
 		));
 
-		//session_start();
+		session_start();
 	}
 	
 	function index($name)
