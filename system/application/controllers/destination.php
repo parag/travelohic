@@ -78,7 +78,7 @@ class Destination extends Controller {
 		$_SESSION['url'] = site_url('destination/index/'.$name);
 		$session = $this->facebook->getSession();
 		$me = null;
-		$data['fb_connect'] = $facebook->getLoginUrl();
+		$data['fb_connect'] = $this->facebook->getLoginUrl();
 		$this->load->view('destination', $data);
 	}
 	
