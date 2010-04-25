@@ -83,7 +83,7 @@ class Destination extends Controller {
 		/*
 		 * get related campaigns
 		 */
-		$campaigns_array = $this->__get_related($c->category_id);
+		$campaigns_array = $this->__get_related($c->categoryid);
 		$size = $campaigns_array;
 		$cArr1 = array();
 		$cArr2 = array();
@@ -113,11 +113,11 @@ class Destination extends Controller {
 		echo "1";
 	}
 	
-	function __get_related($category_id)
+	function __get_related($categoryid)
 	{
 		$c = new Campaign();
-		$sql = "SELECT * FROM campaigns ORDER BY RAND() WHERE 'category_id' = ? LIMIT ?";
-		$binds = array($category_id, '5');
+		$sql = "SELECT * FROM campaigns ORDER BY RAND() WHERE 'categoryid' = ? LIMIT ?";
+		$binds = array($categoryid, '5');
 		$c->query($sql, $binds);
 		return $c;
 	}
