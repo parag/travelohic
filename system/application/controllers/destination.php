@@ -118,7 +118,7 @@ class Destination extends Controller {
 		$c = new Campaign();
 		$sql = "SELECT * FROM campaigns ORDER BY RAND() WHERE 'category_id' = ? LIMIT ?";
 		$binds = array($category_id, '5');
-		$c->query($sql, $bind);
+		$c->query($sql, $binds);
 		return $c;
 	}
 
