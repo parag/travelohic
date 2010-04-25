@@ -85,6 +85,7 @@ class Destination extends Controller {
 		 */
 		$campaigns_array = $this->__get_related($c->categoryid);
 		$size = $campaigns_array;
+		$curr=0;
 		$cArr1 = array();
 		$cArr2 = array();
 		foreach($campaigns_array as $campaign)
@@ -97,6 +98,7 @@ class Destination extends Controller {
 			{
 				$cArr2[] = $campaign;
 			}
+			$curr++;
 		}
 		$data['carr1'] = $cArr1;
 		$data['carr2'] = $cArr2;
