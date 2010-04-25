@@ -115,7 +115,7 @@ class Destination extends Controller {
 	
 	function __get_related($category_id)
 	{
-		$c = new Campaigns();
+		$c = new Campaign();
 		$sql = "SELECT * FROM campaigns ORDER BY RAND() WHERE 'category_id' = ? LIMIT ?";
 		$binds = array($category_id, '5');
 		$c->query($sql, $bind);
