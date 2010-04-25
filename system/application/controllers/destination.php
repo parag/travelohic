@@ -98,8 +98,8 @@ class Destination extends Controller {
 				$cArr2[] = $campaign;
 			}
 		}
-		$data['cArr1'] = $cArr1;
-		$data['cArr2'] = $cArr2;
+		$data['carr1'] = $cArr1;
+		$data['carr2'] = $cArr2;
 		$this->load->view('destination', $data);
 	}
 	

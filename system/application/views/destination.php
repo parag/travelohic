@@ -56,7 +56,7 @@
         <div id="similiar">
             <div style="left:5px;position:absolute;width:50%">
 				<?php
-				foreach($cArr1 as $campaign)
+				foreach($carr1 as $campaign)
 				{
 					echo $campaign->name;
 					echo "<br/>";
@@ -65,7 +65,7 @@
 			</div>
 			<div style="right:5px;position:absolute;width:50%">
 				<?php
-				foreach($cArr2 as $campaign)
+				foreach($carr2 as $campaign)
 				{
 					echo $campaign->name;
 					echo "<br/>";
