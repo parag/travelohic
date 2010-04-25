@@ -345,22 +345,35 @@
 	
 	function fb_register($name, $email, $fb_uis, $fb_dob)
 	{
-		$a = new Account();
-		$a->where('fb_uis',$fb_uis)->get();
-		if($a->exists())
+		$c = new Account();
+		$c->where('fb_uis',$fb_uis)->get();
+		if($c->exists())
 		{
-			$a->login();
+			$c->login();
 		}
 		else
 		{
-			$a->name = $name;
-			$a->email = $email;
-			$a->fb_uis = $fb_uis;
-			$a->fb_dob = $fb_dob;
-			$a->password = md5(uniqid(rand(), true));
-			$a->salt = md5(uniqid(rand(), true));
-			$a->save();
-			$a->login();
+			$b = new Account();
+			$b->where('email',$email)->get();
+			if($b->exists())
+			{
+				$b->fb_uis = $fb_uis;
+				$b->fb_dob = $fb_dob;
+				$b->save();
+				$b->login();
+			}
+			else
+			{
+				$a = new Account();
+				$a->name = $name;
+				$a->email = $email;
+				$a->fb_uis = $fb_uis;
+				$a->fb_dob = $fb_dob;
+				$a->password = md5(uniqid(rand(), true));
+				$a->salt = md5(uniqid(rand(), true));
+				$a->save();
+				$a->login();
+			}
 		}
 		
 		if(isset($_SESSION['url']))

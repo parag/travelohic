@@ -79,6 +79,27 @@ class Destination extends Controller {
 		$session = $this->facebook->getSession();
 		$me = null;
 		$data['fb_connect'] = $this->facebook->getLoginUrl();
+		
+		/*
+		 * get related campaigns
+		 */
+		$campaigns_array = $this->__get_related($c->category_id);
+		$size = $campaigns_array;
+		$cArr1 = array();
+		$cArr2 = array();
+		foreach($campaigns_array as $campaign)
+		{
+			if($curr <= $size/2)
+			{
+				$cArr1[] = $campaign;
+			}
+			else
+			{
+				$cArr2[] = $campaign;
+			}
+		}
+		$data['cArr1'] = $cArr1;
+		$data['cArr2'] = $cArr2;
 		$this->load->view('destination', $data);
 	}
 	
@@ -90,6 +111,15 @@ class Destination extends Controller {
 		$c->user_id = $this->input->post('user_id');
 		$c->save();
 		echo "1";
+	}
+	
+	function __get_related($category_id)
+	{
+		$c = new Campaigns();
+		$sql = "SELECT * FROM campaigns ORDER BY RAND() WHERE 'category_id' = ? LIMIT ?";
+		$binds = array($category_id, '5');
+		$c->query($sql, $bind);
+		return $c;
 	}
 
 	function fbtest()

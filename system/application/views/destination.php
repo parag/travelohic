@@ -54,7 +54,24 @@
             </div>
         </div>
         <div id="similiar">
-            testing the related field
+            <div style="left:5px;position:absolute;width:50%">
+				<?php
+				foreach($cArr1 as $campaign)
+				{
+					echo $campaign->name;
+					echo "<br/>";
+				}
+				?>
+			</div>
+			<div style="right:5px;position:absolute;width:50%">
+				<?php
+				foreach($cArr2 as $campaign)
+				{
+					echo $campaign->name;
+					echo "<br/>";
+				}
+				?>
+			</div>
 			<span id="close-similiar"><a href="#" id="closesimiliar"><img src="<?=base_url()?>/images/icons/close.png"></a></span>
         </div>
 		<div id="moods" class="slide-right">

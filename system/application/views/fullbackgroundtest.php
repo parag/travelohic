@@ -16,7 +16,8 @@
             </div>
         </div>
         <div id="similiar">
-            testing the related field
+            <div style="left:5px;position:absolute;width:50%">test1<br/>testing 3</div>
+			<div style="right:5px;position:absolute;width:50%">test2<br/>testufgkjh</div>
 			<span id="close-similiar"><a href="#" id="closesimiliar"><img src="<?=base_url()?>/images/icons/close.png"></a></span>
         </div>
 		<div id="comments">

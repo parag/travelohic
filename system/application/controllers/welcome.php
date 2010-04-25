@@ -13,6 +13,9 @@ class Welcome extends Controller {
 	
 	function index()
 	{
+		$t = new Account();
+		$t->query("SELECT * FROM accounts");
+		print_r($t->count());die();
 		$this->load->view('fullbackgroundtest');
 	}
 }
