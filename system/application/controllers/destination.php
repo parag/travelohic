@@ -92,11 +92,11 @@ class Destination extends Controller {
 		{
 			if($curr <= $size/2)
 			{
-				$cArr1[] = $campaign;
+				$cArr1[$curr] = $campaign;
 			}
 			else
 			{
-				$cArr2[] = $campaign;
+				$cArr2[$curr] = $campaign;
 			}
 			$curr++;
 		}
