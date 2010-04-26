@@ -85,7 +85,7 @@ class Destination extends Controller {
 		 */
 		$campaigns_array = $this->__get_related($c->categoryid);
 		$size = $campaigns_array;
-		print_r($size);
+		echo $size;
 		$curr=0;
 		foreach($campaigns_array->all as $campaign)
 		{
