@@ -3,6 +3,10 @@
       xmlns:fb="http://www.facebook.com/2008/fbml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta property="og:title" content="<?=$title?>"/>
+    	<meta property="og:site_name" content="travelohic.com"/>
+    	<meta property="og:image" content="<?=base_url()?>images/bgsmall/<?=$photo?>"/>
+
         <title><?=$title?></title>
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/reset-fonts-grid.css">
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/nicescreen.css">
@@ -120,35 +124,7 @@
 			</div>
         </div>
         <div id="leader">
-            <form method="get" action="#">
-                <div class="box">
-                    <label>
-                        <span>name</span>
-                        <input type="text" class="input_text" name="name" id="name">
-                    </label>
-                    <label>
-                        <span>email</span>
-                        <input type="text" class="input_text" name="email" id="email">
-                    </label>
-                    <label>
-                        <span>phone</span>
-                        <input type="text" class="input_text" name="phone" id="email">
-                    </label>
-                    <label>
-                        <span>country</span>
-                        <input type="text" class="input_text" name="country" id="country">
-                    </label>
-                    <label>
-                        <span>comment</span>
-                        <br/>
-                        <br/>
-                        <textarea class="message" name="comment" id="comment"></textarea>
-                        <br/>
-                        <br/>
-                        <input type="button" class="button" value="enquire" onclick="alert('test');">
-                    </label>
-                </div>
-            </form>
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fdevelopers.facebook.com%2F&amp;layout=standard&amp;show_faces=true&amp;width=279&amp;action=recommend&amp;font=lucida+grande&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:279px; height:px"></iframe>
         </div>
 		<div id="loginwindow" class="leftwindow">
 			<div class="box">

@@ -85,7 +85,6 @@ class Destination extends Controller {
 		 */
 		$campaigns_array = $this->__get_related($c->categoryid);
 		$size = $campaigns_array->count();
-		echo $size;
 		$curr=0;
 		foreach($campaigns_array->all as $campaign)
 		{
@@ -118,7 +117,7 @@ class Destination extends Controller {
 	{
 		$c = new Campaign();
 		$sql = "SELECT * FROM campaigns WHERE categoryid = ? ORDER BY RAND() LIMIT ?";
-		$binds = array($categoryid, 5);
+		$binds = array($categoryid, 12);
 		$c->query($sql, $binds);
 		return $c;
 	}
