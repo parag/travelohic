@@ -6,7 +6,9 @@
 		<meta property="og:title" content="<?=$title?>"/>
     	<meta property="og:site_name" content="travelohic.com"/>
     	<meta property="og:image" content="<?=base_url()?>images/bgsmall/<?=$photo?>"/>
-
+		<meta property="og:url" content="http://www.imdb.com/title/tt0117500/"/>
+		<meta property="og:description"
+          content="<?=$description?>"/>
         <title><?=$title?></title>
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/reset-fonts-grid.css">
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/nicescreen.css">
@@ -124,7 +126,7 @@
 			</div>
         </div>
         <div id="leader">
-            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fdevelopers.facebook.com%2F&amp;layout=standard&amp;show_faces=true&amp;width=279&amp;action=recommend&amp;font=lucida+grande&amp;colorscheme=dark" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:279px; height:px"></iframe>
+            <iframe src="http://www.facebook.com/plugins/like.php?href=<?=$cleanUrl?>&amp;layout=standard&amp;show_faces=true&amp;width=279&amp;action=recommend&amp;font=lucida+grande&amp;colorscheme=dark" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:279px; height:px"></iframe>
 			test
         </div>
 		<div id="loginwindow" class="leftwindow">

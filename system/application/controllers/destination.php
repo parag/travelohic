@@ -75,7 +75,6 @@ class Destination extends Controller {
 			}
 		}
 		$data['a'] = $a;
-		$_SESSION['url'] = site_url('destination/index/'.$name);
 		$session = $this->facebook->getSession();
 		$me = null;
 		$data['fb_connect'] = $this->facebook->getLoginUrl();
@@ -100,6 +99,9 @@ class Destination extends Controller {
 		}
 		$data['carr1'] = $cArr1;
 		$data['carr2'] = $cArr2;
+		$data['currUrl'] = site_url('destination/index/'.$name);
+		$data['cleanUrl'] = xss_clean($data['currUrl']);
+		$_SESSION['url'] = $data['currUrl'];
 		$this->load->view('destination', $data);
 	}
 	
