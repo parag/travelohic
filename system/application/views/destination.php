@@ -6,7 +6,7 @@
 		<meta property="og:title" content="<?=$title?>"/>
     	<meta property="og:site_name" content="travelohic.com"/>
     	<meta property="og:image" content="<?=base_url()?>images/bgsmall/<?=$photo?>"/>
-		<meta property="og:url" content="http://www.imdb.com/title/tt0117500/"/>
+		<meta property="og:url" content="<?=$currUrl?>"/>
 		<meta property="og:description"
           content="<?=$description?>"/>
         <title><?=$title?></title>
