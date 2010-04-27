@@ -26,8 +26,8 @@
 					}
 					else
 					{
-						echo "<li><a href='#openlogin' id='openlogin'>login</a></li>";
-						echo "<li><a href='#openregister' id='openregister'>register</a></li>";
+						echo "<li><a href='#openlogin' class='openlogin'>login</a></li>";
+						echo "<li><a href='#openregister' class='openregister'>register</a></li>";
 					}
 					?>
                 </li>
