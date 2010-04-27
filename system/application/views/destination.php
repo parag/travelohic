@@ -124,7 +124,8 @@
 			</div>
         </div>
         <div id="leader">
-            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fdevelopers.facebook.com%2F&amp;layout=standard&amp;show_faces=true&amp;width=279&amp;action=recommend&amp;font=lucida+grande&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:279px; height:px"></iframe>
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fdevelopers.facebook.com%2F&amp;layout=standard&amp;show_faces=true&amp;width=279&amp;action=recommend&amp;font=lucida+grande&amp;colorscheme=dark" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:279px; height:px"></iframe>
+			test
         </div>
 		<div id="loginwindow" class="leftwindow">
 			<div class="box">
