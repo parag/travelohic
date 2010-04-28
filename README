@@ -1,25 +1,7 @@
-@paragarora: Just starting
-
-TODOs: 
-1. Display pictures of users on comments - done
-2. Deploy to production - done
-2.1. Add small photographs too along with campaign big photos - done -> bgsmall is the dir for this
-2.2. Testing of deployment. Upload one campaign and create two accounts. - done
-3. Add email verification intermediate step for registration
-4. Implement forgot password
-5. Protect admin page by a static password string - done
-6. Add option to view campaign pages - currently will be done on sql
-7. Add option to edit campaign pages - will be done by wget and convert -resize bash command
-8. Edit settings pages template.
-Set up domain on slicehost - done
-set up email on slicehost - figured out how -- done
-------
-||. Start creating destinations location + Keep inserting comments in them.
-9. 
-
-------
-To fetch image
-$ wget imageurl.jpg
-$ convert - resize 1024x768 origname destinationimg
-$ convert - Create share on facebook widget.
-10. Create the complete system in terms of a website.resize 100x80 origname destinationthumbimg
+1. Add to wishlist in controller
+2. introspecting div and adding all response of javascript on UI
+3. create home page (welcome page)
+4. replicate for settings page
+5. add forgot password url 
+6. do url rewriting
+7. Google Custom Search

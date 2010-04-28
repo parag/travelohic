@@ -187,6 +187,17 @@ $(document).ready(function(){
             }
         });
     });
+	$("#wishlistbutton").click(function(event){
+		var datastring = 'user_id=' + user_id + "&campaign_id=" + campaign_is;
+		$.ajax({
+			type: "POST",
+			url: base_url + "destination/addWish",
+			data: datastring,
+			success: function(){
+				alert(datastring);
+			}
+		});
+	});
     $("#content-slider").slider({
         animate: true,
         change: handleSliderChange,
@@ -210,6 +221,9 @@ $(document).ready(function(){
         show_register();
         event.preventDefault();
     });
+	
+	$("#status").hide();
+	
     function handleSliderChange(e, ui){
         var maxScroll = $("#content-scroll").attr("scrollWidth") - $("#content-scroll").width();
         $("#content-scroll").animate({

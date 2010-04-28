@@ -4,9 +4,9 @@
  * © 2010-11 Travelohic
  */
  
- class Share extends Datamapper
+ class Wishe extends Datamapper
  {
- 	function Share()
+ 	function Wishe()
 	{
 		parent::Datamapper();
 	}

@@ -51,6 +51,9 @@
 						echo "<li><a href='".site_url('accounts/logout')."' id='logout'>logout</a></li>";
 					}
 				?>
+				<li id="status">
+					loading...
+				</li>
             </ul>
         </div>
         <div id="description">
@@ -134,7 +137,7 @@
 			?>
 			<div id="wishlist">
 				<div class="box">
-				<input type="button" class="button" value="add to wishlist" id="wishlist"><br/>
+				<input type="button" class="button" value="add to wishlist" id="wishlistbutton"><br/>
 				<small><a href="#">Learn more about wishlist</a></small>
 				</div>
 			</div>

@@ -117,9 +117,13 @@ class Destination extends Controller {
 		echo "1";
 	}
 	
-	function addToWishlist()
+	function addWish()
 	{
-		
+		$w = new Wishe();
+		$w->user_id = $this->input->post("user_id");
+		$w->campaign_id = $this->input->post("campaign_id");
+		$w->save();
+		echo "1";
 	}
 	
 	function __get_related($categoryid)
