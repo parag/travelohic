@@ -128,7 +128,10 @@
         </div>
         <div id="leader">
             <iframe src="http://www.facebook.com/plugins/like.php?href=<?=$cleanUrl?>&amp;layout=standard&amp;show_faces=true&amp;width=279&amp;action=like&amp;font=lucida+grande&amp;colorscheme=dark" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:279px; height:px"></iframe>
-			test
+			<div id="wishlist">
+				<input type="button" class="button" value="add to wishlist" id="wishlist">
+				<small><a href="#">learn more about wishlist</a></small>
+			</div>
         </div>
 		<div id="loginwindow" class="leftwindow">
 			<div class="box">
@@ -185,10 +188,6 @@
 				<a href="<?php echo $fb_connect; ?>">
 				<img src="http://static.ak.fbcdn.net/rsrc.php/zB6N8/hash/4li2k73z.gif">
 				</a>
-				<div id="wishlist">
-					<input type="button" class="button" value="add to wishlist" id="wishlist">
-					<small><a href="#">learn more about wishlist</a></small>
-				</div>
 			</div>
 		</div>
     </body>
