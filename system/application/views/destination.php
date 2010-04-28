@@ -7,6 +7,7 @@
     	<meta property="og:site_name" content="travelohic.com"/>
     	<meta property="og:image" content="<?=base_url()?>images/bgsmall/<?=$photo?>"/>
 		<meta property="og:url" content="<?=$currUrl?>"/>
+		<meta property="fb:app_id" content="<?=FBAPPID?>"/>
 		<meta property="og:description"
           content="<?=$description?>"/>
         <title><?=$title?></title>
@@ -27,7 +28,7 @@
 					else
 					{
 						echo "<li><a href='#openlogin' id='openlogin'>login</a></li>";
-						echo "<li><a href='#openregister' id='openlogin'>register</a></li>";
+						echo "<li><a href='#openregister' id='openregister'>register</a></li>";
 					}
 					?>
                 </li>
@@ -126,7 +127,7 @@
 			</div>
         </div>
         <div id="leader">
-            <iframe src="http://www.facebook.com/plugins/like.php?href=<?=$cleanUrl?>&amp;layout=standard&amp;show_faces=true&amp;width=279&amp;action=recommend&amp;font=lucida+grande&amp;colorscheme=dark" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:279px; height:px"></iframe>
+            <iframe src="http://www.facebook.com/plugins/like.php?href=<?=$cleanUrl?>&amp;layout=standard&amp;show_faces=true&amp;width=279&amp;action=like&amp;font=lucida+grande&amp;colorscheme=dark" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:279px; height:px"></iframe>
 			test
         </div>
 		<div id="loginwindow" class="leftwindow">
@@ -184,6 +185,10 @@
 				<a href="<?php echo $fb_connect; ?>">
 				<img src="http://static.ak.fbcdn.net/rsrc.php/zB6N8/hash/4li2k73z.gif">
 				</a>
+				<div id="wishlist">
+					<input type="button" class="button" value="add to wishlist" id="wishlist">
+					<small><a href="#">learn more about wishlist</a></small>
+				</div>
 			</div>
 		</div>
     </body>

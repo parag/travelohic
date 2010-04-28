@@ -100,7 +100,9 @@ class Destination extends Controller {
 		$data['carr1'] = $cArr1;
 		$data['carr2'] = $cArr2;
 		$data['currUrl'] = site_url('destination/index/'.$name);
-		$data['cleanUrl'] = xss_clean($data['currUrl']);
+		$data['cleanUrl'] = $data['currUrl'];
+		$data['cleanUrl'] = str_replace("/","%2F",$data['cleanUrl']);
+		$data['cleanUrl'] = str_replace(":","%3A",$data['cleanUrl']);
 		$_SESSION['url'] = $data['currUrl'];
 		$this->load->view('destination', $data);
 	}
@@ -113,6 +115,11 @@ class Destination extends Controller {
 		$c->user_id = $this->input->post('user_id');
 		$c->save();
 		echo "1";
+	}
+	
+	function addToWishlist()
+	{
+		
 	}
 	
 	function __get_related($categoryid)
