@@ -127,7 +127,7 @@
 			</div>
         </div>
         <div id="leader">
-            <iframe src="http://www.facebook.com/plugins/like.php?href=<?=$cleanUrl?>&amp;layout=standard&amp;show_faces=true&amp;width=279&amp;action=like&amp;font=lucida+grande&amp;colorscheme=dark" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:279px; height:px"></iframe>
+            <iframe src="http://www.facebook.com/plugins/like.php?href=<?=$cleanUrl?>&amp;layout=standard&amp;show_faces=true&amp;width=279&amp;width=100&amp;action=like&amp;font=lucida+grande&amp;colorscheme=dark" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:279px; height:px"></iframe>
 			<?
 			if($a->isLogin())
 			{
@@ -146,7 +146,7 @@
 			<div id="wishlist">
 				<div class="box">
 				<input type="button" class="button" value="login" id="wishlist-login"><br/>
-				<small><a href="#">Login to add to wishlist. Learn more about wishlist</a></small><br/>
+				<small>Login to add to wishlist.<a href="#"> Learn more about wishlist</a></small><br/>
 				<h2>OR</h2><br/>
 				<a href="<?php echo $fb_connect; ?>">
 				<img src="http://static.ak.fbcdn.net/rsrc.php/zB6N8/hash/4li2k73z.gif">

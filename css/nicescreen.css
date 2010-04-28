@@ -19,7 +19,8 @@ h1 a {padding: 41px 10px 10px 0;color: #ffffff;background: #000;font-size: 11px;
 #leader {position: absolute;background: #000;opacity: 0.8;filter: alpha( opacity = 80);bottom:73px;top:0;right:20px;width:279px;}
 form, input, select, textarea {margin: 0;padding: 0;color: #ffffff;}
 div.box {margin: 0 auto;width: 270px;background: #000;position: relative;top: 20px;border: 1px solid #262626; color: #eeeeee;}
-div.box small a {color:#eeeeee;font-size:8px;}
+div.box small {color:#fff;font-size:9px;}
+div.box small a {color:#eeeeee;font-size:9px;}
 div.box h1 {color: #ffffff;font-size: 12px;text-transform: uppercase;padding: 5px 0 5px 5px;border-bottom: 1px solid #161712;border-top: 1px solid #161712;}
 div.box label {width: 100%;display: block;background: #1C1C1C;border-top: 1px solid #262626;border-bottom: 1px solid #161712;padding: 5px 0 5px 0;}
 div.box label span {display: block;color: #bbbbbb;font-size: 16px;float: left;width: 70px;text-align: right;}
