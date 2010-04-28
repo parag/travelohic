@@ -15,14 +15,13 @@
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/nicescreen.css">
     </head>
     <body>
-    	<div id="description">
+        <div id="description">
             <span>travelohic.com</span>
             <h1><a href=#><?=$name?></a></h1>
             <div>
                 <h2><?=$description?></h2>
             </div>
         </div>
-		<div id="status">loading...</div>
         <img src="<?=base_url()?>images/bgs/<?=$photo?>" class="bg" />
 		<div id="moving"><div id="moviecomments"></div></div>
 		<div id="menu">
@@ -59,9 +58,11 @@
 						echo "<li><a href='".site_url('accounts/logout')."' id='logout'>logout</a></li>";
 					}
 				?>
+				<li id="status">
+					loading...
+				</li>
             </ul>
         </div>
-        
         <div id="similiar">
             <div style="left:5px;position:absolute;width:50%">
 				<?php
