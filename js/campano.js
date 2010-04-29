@@ -189,7 +189,7 @@ $(document).ready(function(){
             }
         });
 		$("#status").html("sent");
-		$("#status").hide("slow");
+		$("#status").fadeOut(5000);
     });
 	$("#wishlistbutton").click(function(event){
 		$("#status").show();
@@ -204,7 +204,7 @@ $(document).ready(function(){
 			}
 		});
 		$("#status").html("added");
-		$("#status").hide("slow");
+		$("#status").fadeOut(5000);
 	});
     $("#content-slider").slider({
         animate: true,
