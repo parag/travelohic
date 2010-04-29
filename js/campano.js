@@ -176,6 +176,7 @@ $(document).ready(function(){
         event.preventDefault();
     });
     $("#commentbutton").click(function(event){
+		$("#status").html("sending comment...");
         var cmnt = $("#commentarea").val();
         var datastring = 'comment=' + cmnt + '&campaign_id=' + campaign_id + '&user_id=' + user_id;
         $.ajax({
@@ -186,9 +187,12 @@ $(document).ready(function(){
                 alert(datastring);
             }
         });
+		$("#status").html("sent");
+		$("#status").hide("slow");
     });
 	$("#wishlistbutton").click(function(event){
-		var datastring = 'user_id=' + user_id + "&campaign_id=" + campaign_is;
+		$("#status").html("adding...");
+		var datastring = 'user_id=' + user_id + "&campaign_id=" + campaign_id;
 		$.ajax({
 			type: "POST",
 			url: base_url + "destination/addWish",
@@ -197,6 +201,8 @@ $(document).ready(function(){
 				alert(datastring);
 			}
 		});
+		$("#status").html("added");
+		$("#status").hide("slow");
 	});
     $("#content-slider").slider({
         animate: true,
