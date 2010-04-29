@@ -1,6 +1,6 @@
 1. Add to wishlist in controller - done
 1.1. Do not wishlist if already added to wishlist. Show Share instead.
-2. introspecting div and adding all response of javascript on UI
+2. introspecting div and adding all response of javascript on UI - partially done. need to do testing and mods
 3. create home page (welcome page)
 4. replicate for settings page
 5. add forgot password url 

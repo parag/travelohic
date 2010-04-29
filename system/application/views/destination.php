@@ -3,6 +3,9 @@
       xmlns:fb="http://www.facebook.com/2008/fbml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="title" content="<?=$title?>" /> 
+		<meta name="description" content="<?=$description?>" /> 
+		<link rel="image_src" href="<?=base_url()?>images/bgsmall/<?=$photo?>" />
 		<meta property="og:title" content="<?=$title?>"/>
     	<meta property="og:site_name" content="travelohic.com"/>
     	<meta property="og:image" content="<?=base_url()?>images/bgsmall/<?=$photo?>"/>
@@ -137,7 +140,20 @@
 			?>
 			<div id="wishlist">
 				<div class="box">
+				<?
+				if($is_wish)
+				{
+				?>
 				<input type="button" class="button" value="add to wishlist" id="wishlistbutton"><br/>
+				<?
+				}
+				else
+				{
+				?>
+				<a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php">Share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+				<?
+				}
+				?>
 				<small><a href="#">Learn more about wishlist</a></small>
 				</div>
 			</div>

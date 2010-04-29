@@ -14,7 +14,7 @@ define('FBAPPSECRET', 'b8d26c7a262e8e8cf1f2235344e93c6f');
 |	http://example.com/
 |
 */
-$config['base_url']	= "http://travelohic.com/";
+$config['base_url']	= "http://localhost/travelohic/";
 
 /*
 |--------------------------------------------------------------------------

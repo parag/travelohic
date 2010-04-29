@@ -27,6 +27,7 @@ class Destination extends Controller {
 	function index($name)
 	{
 		$a = new Account();
+		$is_wish = 0;
 		if($name!="")
 		{
 			$c = new Campaign();
@@ -72,6 +73,12 @@ class Destination extends Controller {
 				$commentsStr=$commentsStr."]";
 				$data['commentsStr'] = $commentsStr;
 				$data['commentsNum'] = $numComments;
+				if($a->isLogin())
+				{
+					$r = mysql_query("SELECT COUNT(*) FROM wishes WHERE campaign_id = ".$c->id." AND user_id = ".$a->id);
+					$total = mysql_fetch_array($r);
+					$is_wish = $total[0];
+				}
 			}
 		}
 		$data['a'] = $a;
@@ -103,6 +110,7 @@ class Destination extends Controller {
 		$data['cleanUrl'] = $data['currUrl'];
 		$data['cleanUrl'] = str_replace("/","%2F",$data['cleanUrl']);
 		$data['cleanUrl'] = str_replace(":","%3A",$data['cleanUrl']);
+		$data['is_wish'] = $is_wish;
 		$_SESSION['url'] = $data['currUrl'];
 		$this->load->view('destination', $data);
 	}
