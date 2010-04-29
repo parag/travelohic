@@ -149,7 +149,6 @@
 			<div id="wishlist">
 				<div class="box">
 				<input type="button" class="button" value="login" id="wishlist-login"><br/>
-				<input type="button" class="button" value="test" id="test"><br/>
 				<small>Login to add to wishlist.<a href="#"> Learn more about wishlist</a></small><br/>
 				<h2>OR</h2><br/>
 				<a href="<?php echo $fb_connect; ?>">
