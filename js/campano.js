@@ -176,8 +176,8 @@ $(document).ready(function(){
         event.preventDefault();
     });
     $("#commentbutton").click(function(event){
-		$("#status").html("sending comment...");
 		$("#status").show();
+		$("#status").html("sending comment...");
         var cmnt = $("#commentarea").val();
         var datastring = 'comment=' + cmnt + '&campaign_id=' + campaign_id + '&user_id=' + user_id;
         $.ajax({
@@ -192,8 +192,8 @@ $(document).ready(function(){
 		$("#status").hide("slow");
     });
 	$("#wishlistbutton").click(function(event){
-		$("#status").html("adding...");
 		$("#status").show();
+		$("#status").html("adding...");
 		var datastring = 'user_id=' + user_id + "&campaign_id=" + campaign_id;
 		$.ajax({
 			type: "POST",
@@ -230,7 +230,7 @@ $(document).ready(function(){
         event.preventDefault();
     });
 	
-	$("#status").hide();
+	$("#status").html("");
 	
     function handleSliderChange(e, ui){
         var maxScroll = $("#content-scroll").attr("scrollWidth") - $("#content-scroll").width();
