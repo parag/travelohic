@@ -139,7 +139,7 @@
 			{
 			?>
 			<div id="list">
-				<div class="box">
+				<div class="box" id="wishlist-id">
 				<?
 				if($is_wish<1)
 				{
@@ -151,7 +151,7 @@
 				else
 				{
 				?>
-				<a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php">Share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+				<a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php">Share</a>
 				<?
 				}
 				?>
@@ -249,4 +249,5 @@
 <script src="<?=base_url()?>js/jquery-ui.min.js"></script>
 <script src="<?=base_url()?>js/jquery.dotimeout.min.js"></script>
 <script src="<?=base_url()?>js/campano.js"></script>
+<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
 
