@@ -138,13 +138,14 @@
 			if($a->isLogin())
 			{
 			?>
-			<div id="wishlist">
+			<div id="list">
 				<div class="box">
 				<?
-				if($is_wish)
+				if($is_wish<1)
 				{
 				?>
 				<input type="button" class="button" value="add to wishlist" id="wishlistbutton"><br/>
+				<small><a href="#">Learn more about wishlist</a></small>
 				<?
 				}
 				else
@@ -154,7 +155,6 @@
 				<?
 				}
 				?>
-				<small><a href="#">Learn more about wishlist</a></small>
 				</div>
 			</div>
 			<?
