@@ -203,7 +203,7 @@ $(document).ready(function(){
 				$("#status").html("getting status...");
 			}
 		});
-		$("#wishlist-id").html("<a name=\"fb_share\" type=\"button_count\" href=\"http://www.facebook.com/sharer.php\">Share</a>");
+		$("#wishlist_id").html("<a name=\"fb_share\" type=\"button_count\" href=\"http://www.facebook.com/sharer.php\">Share</a>");
 		$("#status").html("added");
 		$("#status").fadeOut(5000);
 	});

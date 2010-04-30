@@ -139,7 +139,7 @@
 			{
 			?>
 			<div id="list">
-				<div class="box" id="wishlist-id">
+				<div class="box" id="wishlist_id">
 				<?
 				if($is_wish<1)
 				{
