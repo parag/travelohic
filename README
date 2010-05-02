@@ -1,12 +1,15 @@
 1. Add to wishlist in controller - done
 1.1. Do not wishlist if already added to wishlist. Show Share instead. - done
-2. introspecting div and adding all response of javascript on UI - partially done. need to do testing and mods
-3. create home page (welcome page)
-4. replicate for settings page
-5. add forgot password url 
+2. introspecting div and adding all response of javascript on UI - done
+3. create home page (welcome page) - done
+3.1. add copyrights - done
+4. replicate for settings page - done
+5. add forgot password url - done
+5.1. do fburlmanager changes
 6. do url rewriting
 7. Google Custom Search
+8. add current timestamp to wishlist
 
 BUGS: 
 
-- all campaigns appear to be in wishlist
+- all campaigns appear to be in wishlist - done

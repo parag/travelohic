@@ -77,6 +77,8 @@
             }
 		}
 		$data['e'] = $e;
+		$data['title'] = "register | travelohic, for all your travel addictions";
+		$data['description'] = "travelohic is a social utility to explore cool places around";
 		$this->load->view('account/register',$data);
 	}
 	
@@ -85,7 +87,7 @@
 		$a = new Account();
 		if(!$a->isLogin())
 		{
-			die();
+			redirect('welcome');
 		}
 		$e="";
 		if($this->input->post('issend'))
@@ -93,6 +95,7 @@
 			$a->name = $this->input->post('name');
 			$a->url = $this->input->post('url');
 			$a->mobile = $this->input->post('mobile');
+			$a->fb_hometown = $this->input->post('fb_hometown');
 			$a->save();
 			foreach($a->error->all as $err)
 			{
@@ -101,6 +104,8 @@
 		}
 		$data['e'] = $e;
 		$data['a'] = $a;
+		$data['title'] = "edit profile | travelohic, for all your travel addictions";
+		$data['description'] = "travelohic is a social utility to explore cool places around";
 		$this->load->view('account/editprofile',$data);
 	}
 	
@@ -109,7 +114,7 @@
 		$a = new Account();
 		if(!$a->isLogin())
 		{
-			die();
+			redirect('welcome');
 		}
 		$e="";
 		if($this->input->post('issend'))
@@ -159,6 +164,8 @@
         }
 		$data['e'] = $e;
 		$data['a'] = $a;
+		$data['title'] = "update photo | travelohic, for all your travel addictions";
+		$data['description'] = "travelohic is a social utility to explore cool places around";
 		$this->load->view('account/updatephoto',$data);
 	}
 	
@@ -167,7 +174,7 @@
 		$a = new Account();
 		if(!$a->isLogin())
 		{
-			die();
+			redirect('welcome');
 		}
 		$e="";
 		if($this->input->post('issend'))
@@ -185,6 +192,8 @@
 		}
 		$data['e'] = $e;
 		$data['a'] = $a;
+		$data['title'] = "change password | travelohic, for all your travel addictions";
+		$data['description'] = "travelohic is a social utility to explore cool places around";
 		$this->load->view('account/changepassword', $data);
 	}
 	
@@ -196,7 +205,7 @@
 		{
 			$a->email = $this->input->post('email');
 			$a->password  =$this->input->post('password');
-			if($a->loginif())
+			if($a->isLogin())
 			{
 				if(isset($_SESSION['url']))
 				{
@@ -215,6 +224,8 @@
 		}
 		$data['a'] = $a;
 		$data['e'] = $e;
+		$data['title'] = "login | travelohic, for all your travel addictions";
+		$data['description'] = "travelohic is a social utility to explore cool places around";
 		$this->load->view('account/login',$data);
 	}
 	
@@ -260,6 +271,8 @@
 			}
 		}
 		$data['e'] = $e;
+		$data['title'] = "sign up | travelohic, for all your travel addictions";
+		$data['description'] = "travelohic is a social utility to explore cool places around";
 		$this->load->view('account/signup',$data);
 	}
 	
@@ -280,7 +293,7 @@
 				$message = $message.$url."\n\n";
 				$message = $message."Thanks\nTeam Travelohic\n";
 				$this->_user_email($a->email, $subject, $message);
-				$e = "Please check your email to complete process of changin your password";
+				$e = "Please check your email to complete process of changing your password";
 			}
 			else
 			{
@@ -288,6 +301,8 @@
 			}
 		}
 		$data['e'] = $e;
+		$data['title'] = "forgot password | travelohic, for all your travel addictions";
+		$data['description'] = "travelohic is a social utility to explore cool places around";
 		$this->load->view('account/forgot_password',$data);
 	}
 	

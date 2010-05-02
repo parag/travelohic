@@ -26,6 +26,7 @@ class Destination extends Controller {
 	
 	function index($name)
 	{
+		redirect('welcome');
 		$a = new Account();
 		$is_wish = 0;
 		if($name!="")

@@ -234,6 +234,7 @@
 				</a>
 			</div>
 		</div>
+		<div id="copyrights">copyrights &copy; travelohic.com</div>
     </body>
 </html><!-- time for some javascript-->
 <script type="text/javascript">

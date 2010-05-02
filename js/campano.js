@@ -221,6 +221,11 @@ $(document).ready(function(){
         show_login();
         event.preventDefault();
     });
+	$("#wishlist-login").click(function(event){
+		hide_register();
+        show_login();
+        event.preventDefault();
+    });
 	$("#closeregister").click(function(event){
         hide_register();
         event.preventDefault();
