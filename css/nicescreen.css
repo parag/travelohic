@@ -56,5 +56,6 @@ div.smallbox .button {width: 164px;background: #CC0000;height: 30px;font-size: 1
 .leftwindow{position:absolute;top:20px;left:0;width:270px;}
 .close-left{position: absolute;top: 0px;right: 0px;}
 #copyrights {position: absolute; right: 5px; bottom: 0;}
-ul#grid li {background:#000000; opacity: 1;filter: alpha( opacity = 100);list-style: none outside; float: left; padding: 5px; width: 80px; height: 80px; line-height: 270px; text-align: center;}
+#wishers {position: absolute; bottom: 73px; right: 20px; width: 279px;}
+ul#grid li {background:#000000; list-style: none outside; float: left; padding: 2px; margin: 1px; width: 80px; height: 80px; line-height: 270px; text-align: center;}
 ul#grid li img {vertical-align: middle;}

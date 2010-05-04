@@ -167,14 +167,14 @@
 			<?
 			}
 			?>
-			<div class="box">
+			
+        </div>
+		<div id="wishers">
 				<?
 				$data['campaign_id'] = $campaign_id;
 				$this->load->view('widgets/wishers', $data);
 				?>
 			</div>
-			
-        </div>
 		<div id="loginwindow" class="leftwindow">
 			<div class="box">
 				<form method="post" action="<?=site_url('accounts/login')?>">
