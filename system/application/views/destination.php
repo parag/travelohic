@@ -133,7 +133,6 @@
 			</div>
         </div>
         <div id="leader">
-            <iframe src="http://www.facebook.com/plugins/like.php?href=<?=$cleanUrl?>&amp;layout=standard&amp;show_faces=true&amp;width=279&amp;width=100&amp;action=like&amp;font=lucida+grande&amp;colorscheme=dark" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:279px; height:px"></iframe>
 			<?
 			if($a->isLogin())
 			{
@@ -145,16 +144,11 @@
 				{
 				?>
 				<input type="button" class="button" value="add to wishlist" id="wishlistbutton"><br/>
-				<small><a href="#">Learn more about wishlist</a></small>
+				<small><a href="#">Learn more about wishlist</a></small><br/>
 				<?
 				}
-				else
-				{
 				?>
 				<a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php">Share</a>
-				<?
-				}
-				?>
 				</div>
 			</div>
 			<?
