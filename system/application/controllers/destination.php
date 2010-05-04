@@ -61,7 +61,7 @@ class Destination extends Controller {
 					{
 						$userpic = "https://graph.facebook.com/".$usr->fb_uis."/picture";
 					}
-					$preCom = "<img src = '".userpic."' align='left'><i>".$usr->name." says </i>";
+					$preCom = "<img src = '".$userpic."' align='left'><i>".$usr->name." says </i>";
 					if($numComments)
 					{
 						$commentsStr=$commentsStr.",";
