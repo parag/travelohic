@@ -20,7 +20,7 @@
 	foreach($w->all as $wish)
 	{
 		$c = new Campaign();
-		$c->where('id', $w->campaign_id)->get();
+		$c->where('id', $wish->campaign_id)->get();
 		$pic = base_url()."images/bgsmall/".$c->photo;
 		echo "<li><img src=\"".$pic."\"/></li>";
 		$count++;
