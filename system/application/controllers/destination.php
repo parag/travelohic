@@ -56,7 +56,12 @@ class Destination extends Controller {
 				{
 					$usr = new Account;
 					$usr->where('id', $comment->user_id)->get();
-					$preCom = "<img src = '".base_url()."/images/profile/".$usr->photo."' align='left'><i>".$usr->name." says </i>";
+					$userpic = base_url()."/images/profile/".$usr->photo;
+					if($usr->fb_uis!="")
+					{
+						$userpic = "https://graph.facebook.com/".$usr->fb_uis."/picture";
+					}
+					$preCom = "<img src = '".userpic."' align='left'><i>".$usr->name." says </i>";
 					if($numComments)
 					{
 						$commentsStr=$commentsStr.",";

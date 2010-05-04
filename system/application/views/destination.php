@@ -163,7 +163,8 @@
 				<h2>OR</h2><br/>
 				<a href="<?php echo $fb_connect; ?>">
 				<img src="http://static.ak.fbcdn.net/rsrc.php/zB6N8/hash/4li2k73z.gif">
-				</a>
+				</a><br/>
+				<a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php">Share</a>
 				</div>
 			</div>
 			<?
