@@ -22,4 +22,6 @@ foreach($w->all as $wish)
 <?
 if($count==0)
 	echo "None yet. Be the first to wish.";
+else
+	echo "Click on user to watch his/her wishlist";
 ?>

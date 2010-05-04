@@ -24,7 +24,6 @@ div.box small {color:#fff;font-size:9px;}
 div.box small a {color:#eeeeee;font-size:9px;}
 div.box a {color:#eeeeee;}
 div.box h1 {color: #ffffff;font-size: 12px;text-transform: uppercase;padding: 5px 0 5px 5px;border-bottom: 1px solid #161712;border-top: 1px solid #161712;}
-div.box h2 {color: #ffffff;font-size: 10px;text-transform: uppercase;padding: 5px 0 5px 5px;border-bottom: 1px solid #161712;border-top: 1px solid #161712;}
 div.box label {width: 100%;display: block;background: #1C1C1C;border-top: 1px solid #262626;border-bottom: 1px solid #161712;padding: 5px 0 5px 0;}
 div.box label span {display: block;color: #bbbbbb;font-size: 16px;float: left;width: 70px;text-align: right;}
 div.box .input_text {padding: 10px 0 10px 0;width: 160px;background: #262626;border-bottom: 1px double #171717;border-top: 1px double #171717;border-left: 1px double #333333;border-right: 1px double #333333;}
@@ -57,5 +56,6 @@ div.smallbox .button {width: 164px;background: #CC0000;height: 30px;font-size: 1
 .close-left{position: absolute;top: 0px;right: 0px;}
 #copyrights {position: absolute; right: 5px; bottom: 0;}
 #wishers {position: absolute; bottom: 73px; right: 20px; width: 279px;}
+#wishers h2 {color: #ffffff;font-size: 10px;text-transform: uppercase;padding: 5px 0 5px 5px;border-bottom: 1px solid #161712;border-top: 1px solid #161712;}
 ul#grid li {background:#000000; list-style: none outside; float: left; padding: 5px; margin: 1px; line-height: 270px; text-align: center;}
 ul#grid li img {vertical-align: middle;}
