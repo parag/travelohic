@@ -406,6 +406,7 @@
 		$data['title'] = "Wishlist";
 		$data['description'] = "Parag's Wishlist";
 		$data['e'] = "";
+		$user_id = $id;
 		$this->load->view('account/wishlist',$data);
 	}
  }
