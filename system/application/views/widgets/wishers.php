@@ -15,6 +15,7 @@ foreach($w->all as $wish)
 		$userpic = "https://graph.facebook.com/".$usr->fb_uis."/picture";
 	}
 	echo "<li><img src=\"".$userpic."\"/></li>";
+	$count++;
 }
 ?>
 </ul>
