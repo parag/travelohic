@@ -400,4 +400,12 @@
 			redirect(base_url());
 		}
 	}
+	
+	function wishlist($id)
+	{
+		$data['title'] = "Wishlist";
+		$data['description'] = "Parag's Wishlist";
+		$data['e'] = "";
+		$this->load->view('account/wishlist',$data);
+	}
  }
