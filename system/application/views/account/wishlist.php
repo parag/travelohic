@@ -5,36 +5,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<meta name="title" content="<?=$title?>" /> 
 		<meta name="description" content="<?=$description?>" /> 
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
         <title><?=$title?></title>
+		<link rel="icon" href="<?=base_url()?>images/favicon.ico"> 
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/reset-fonts-grid.css">
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/messagescreen.css">
     </head>
     <body>
     	<div id="left">
-    		<div id="leftmsg">
-	    		<ul id="grid">
-	<?
-	$w = new Wishe();
-	$w->where('user_id', $user_id)->get();
-	$count = 0;
-	foreach($w->all as $wish)
-	{
-		$c = new Campaign();
-		$c->where('id', $wish->campaign_id)->get();
-		$pic = base_url()."images/bgsmall/".$c->photo;
-		echo "<li><img src=\"".$pic."\"/></li>";
-		$count++;
-	}
-	?>
-	</ul>
-	<?
-	if($count==0)
-		echo "No destination added in wishlist yet.";
-	else
-		echo "Click on destination to add to your wishlist.";
-	?>
-				</ul>
-			</div>
+    		<div id="map">test
+    		</div>
     	</div>
 		<div id="right">
 			<div class="box">
@@ -52,12 +32,32 @@
                         <input type="password" class="input_text" name="password" id="password">
                     </label>
 					<span><a href="<?=site_url('accounts/forgot_password')?>">forgot password?</a></span>
-                    <label>
-                        <input type="submit" class="button" value="login">
-                    </label>
+                    
                 </div>
             <?php echo form_close();?>
-			</div>
+            </div>
+            <div>
+            <br/><br/><br/>
+	<ul id="grid">
+	<?
+	$w = new Wishe();
+	$w->where('user_id', $user_id)->get();
+	$count = 0;
+	foreach($w->all as $wish)
+	{
+		$c = new Campaign();
+		$c->where('id', $wish->campaign_id)->get();
+		$pic = base_url()."images/bgsmall/".$c->photo;
+		echo "<li><a href=".site_url('destination/index/'.$c->nickname)."><img src=\"".$pic."\"/></a></li>";
+		$count++;
+	}
+	if($count==0)
+		echo "No destination added in wishlist yet.";
+	else
+		echo "Click on destination to add to your wishlist.";
+	?>
+	</ul>
+            </div>
 			
 		</div>
 		<div id="menu">
@@ -72,3 +72,17 @@
 		<div id="copyrights">copyrights &copy; travelohic.com</div>
     </body>
 </html>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript">
+initialize();
+  function initialize() {
+    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var myOptions = {
+      zoom: 2,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.HYBRID
+    };
+    var map = new google.maps.Map(document.getElementById("map"), myOptions);
+  }
+
+</script>

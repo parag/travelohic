@@ -205,7 +205,7 @@
 		{
 			$a->email = $this->input->post('email');
 			$a->password  =$this->input->post('password');
-			if($a->isLogin())
+			if($a->loginif())
 			{
 				if(isset($_SESSION['url']))
 				{

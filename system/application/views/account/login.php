@@ -6,6 +6,7 @@
 		<meta name="title" content="<?=$title?>" /> 
 		<meta name="description" content="<?=$description?>" /> 
         <title><?=$title?></title>
+		<link rel="icon" href="<?=base_url()?>images/favicon.ico"> 
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/reset-fonts-grid.css">
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/messagescreen.css">
     </head>
@@ -43,7 +44,7 @@
 		<div id="menu">
             <ul>
                 <li>
-                    <a href="#">home</a>
+                    <a href="<?=base_url()?>">home</a>
                 </li>
 				
             </ul>

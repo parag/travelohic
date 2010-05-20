@@ -6,16 +6,16 @@
 		<meta name="title" content="<?=$title?>" /> 
 		<meta name="description" content="<?=$description?>" /> 
         <title><?=$title?></title>
+		<link rel="icon" href="<?=base_url()?>images/favicon.ico"> 
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/reset-fonts-grid.css">
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/messagescreen.css">
     </head>
     <body>
     	<div id="left">
     		<div id="leftmsg">
-    		<span id="logo">travelohic</span><h2> is a social utility to explore cool places and get best deals
+    		<span id="logo">travelohic</span><h2> is a social utility to explore handpicked destinations and get best deals
 			in the market to visit them whenever available. Would you like to know about <a href=#>wishlist</a>? </h2>
-			<h1><a href=#>ready to explore?</a></h1>
-			<h2>travelohic is currently in stealth mode</h2>
+			<h1><a href="<?=site_url('destination/explore')?>">ready to explore?</a></h1>
 			</div>
     	</div>
 		<div id="right">

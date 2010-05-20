@@ -5,6 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<meta name="title" content="<?=$title?>" /> 
 		<meta name="description" content="<?=$description?>" /> 
+		<link rel="icon" href="<?=base_url()?>images/favicon.ico"> 
 		<link rel="image_src" href="<?=base_url()?>images/bgsmall/<?=$photo?>" />
 		<meta property="og:title" content="<?=$title?>"/>
     	<meta property="og:site_name" content="travelohic.com"/>
@@ -16,6 +17,22 @@
         <title><?=$title?></title>
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/reset-fonts-grid.css">
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/nicescreen.css">
+<!-- time for some javascript. there is a reason for it to be on top-->		
+<script type="text/javascript">
+	var comments = {
+			num: <?=$commentsNum?>,
+			comments: <?=$commentsStr?>
+		};
+	var campaign_id = '<?=$campaign_id?>';
+	var base_url = '<?=base_url()?>index.php/';
+	var user_id = '<?=$a->id?>';
+</script>
+<script src="<?=base_url()?>js/jquery.min.js"></script>
+<script src="<?=base_url()?>js/jquery-ui.min.js"></script>
+<script src="<?=base_url()?>js/jquery.dotimeout.min.js"></script>
+<script src="<?=base_url()?>js/campano.js"></script>
+<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+
     </head>
     <body>
         <div id="description">
@@ -41,9 +58,6 @@
 						echo "<li><a href='#openregister' id='openregister'>register</a></li>";
 					}
 					?>
-                </li>
-                <li>
-                    <a href="#">home</a>
                 </li>
                 <li>
                     <a href="#moods" id="openmoods">categories</a>
@@ -234,19 +248,5 @@
 		</div>
 		<div id="copyrights">copyrights &copy; travelohic.com</div>
     </body>
-</html><!-- time for some javascript-->
-<script type="text/javascript">
-	var comments = {
-			num: <?=$commentsNum?>,
-			comments: <?=$commentsStr?>
-		};
-	var campaign_id = '<?=$campaign_id?>';
-	var base_url = '<?=base_url()?>index.php/';
-	var user_id = '<?=$a->id?>';
-</script>
-<script src="<?=base_url()?>js/jquery.min.js"></script>
-<script src="<?=base_url()?>js/jquery-ui.min.js"></script>
-<script src="<?=base_url()?>js/jquery.dotimeout.min.js"></script>
-<script src="<?=base_url()?>js/campano.js"></script>
-<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+</html>
 
