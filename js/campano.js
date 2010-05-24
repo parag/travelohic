@@ -207,6 +207,38 @@ $(document).ready(function(){
 		$("#status").html("added");
 		$("#status").fadeOut(5000);
 	});
+	$("#visitedbutton").click(function(event){
+		$("#status").show();
+		$("#status").html("adding...");
+		var datastring = 'user_id=' + user_id + "&campaign_id=" + campaign_id;
+		$.ajax({
+			type: "POST",
+			url: base_url + "destination/addVisited",
+			data: datastring,
+			success: function(){
+				$("#status").html("getting status...");
+			}
+		});
+		$("#wishlist_id").html("<a name=\"fb_share\" type=\"button_count\" href=\"http:\/\/www.facebook.com\/sharer.php\">Share</a>");
+		$("#status").html("added");
+		$("#status").fadeOut(5000);
+	});
+	$("#tovisitbutton").click(function(event){
+		$("#status").show();
+		$("#status").html("adding...");
+		var datastring = 'user_id=' + user_id + "&campaign_id=" + campaign_id;
+		$.ajax({
+			type: "POST",
+			url: base_url + "destination/addToVisit",
+			data: datastring,
+			success: function(){
+				$("#status").html("getting status...");
+			}
+		});
+		$("#wishlist_id").html("<a name=\"fb_share\" type=\"button_count\" href=\"http:\/\/www.facebook.com\/sharer.php\">Share</a>");
+		$("#status").html("added");
+		$("#status").fadeOut(5000);
+	});
     $("#content-slider").slider({
         animate: true,
         change: handleSliderChange,

@@ -84,6 +84,12 @@ class Destination extends Controller {
 					$r = mysql_query("SELECT COUNT(*) FROM wishes WHERE campaign_id = ".$c->id." AND user_id = ".$a->id);
 					$total = mysql_fetch_array($r);
 					$is_wish = $total[0];
+					$r1 = mysql_query("SELECT COUNT(*) FROM visiteds WHERE campaign_id = ".$c->id." AND user_id = ".$a->id);
+					$total1 = mysql_fetch_array($r1);
+					$is_visited = $total1[0];
+					$r2 = mysql_query("SELECT COUNT(*) FROM tovisits WHERE campaign_id = ".$c->id." AND user_id = ".$a->id);
+					$total2 = mysql_fetch_array($r2);
+					$again_visit = $total2[0];
 				}
 			}
 		}
@@ -117,6 +123,8 @@ class Destination extends Controller {
 		$data['cleanUrl'] = str_replace("/","%2F",$data['cleanUrl']);
 		$data['cleanUrl'] = str_replace(":","%3A",$data['cleanUrl']);
 		$data['is_wish'] = $is_wish;
+		$data['is_visited'] = $is_visited;
+		$data['again_visit'] = $again_visit;
 		$_SESSION['url'] = $data['currUrl'];
 		$this->load->view('destination', $data);
 	}
@@ -137,6 +145,24 @@ class Destination extends Controller {
 		$w->user_id = $this->input->post("user_id");
 		$w->campaign_id = $this->input->post("campaign_id");
 		$w->save();
+		echo "1";
+	}
+	
+	function addVisited()
+	{
+		$v = new Visited();
+		$v->user_id = $this->input->post("user_id");
+		$v->campaign_id = $this->input->post("campaign_id");
+		$v->save();
+		echo "1";
+	}
+	
+	function addToVisit()
+	{
+		$t = new Tovisit();
+		$t->user_id = $this->input->post("user_id");
+		$t->campaign_id = $this->input->post("campaign_id");
+		$t->save();
 		echo "1";
 	}
 	
