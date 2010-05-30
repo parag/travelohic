@@ -61,7 +61,6 @@
 			<ul> 
 				<li><a href="#wishlist"><img src="http://labs.google.com/ridefinder/images/mm_20_orange.png">WISHLIST</a></li> 
 				<li><a href="#tabs-2"><img src="http://labs.google.com/ridefinder/images/mm_20_green.png">VISITED</a></li> 
-				<li><a href="#tabs-3"><img src="http://labs.google.com/ridefinder/images/mm_20_purple.png">WISH TO VISIT AGAIN</a></li> 
 			</ul> 
 			<div id="wishlist">
 				<ul id="grid">
@@ -92,8 +91,35 @@
 				?>
 				</ul>
 			</div> 
-			<div id="tabs-2">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div> 
-			<div id="tabs-3">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div> 
+			<div id="tabs-2">
+				<ul id="grid">
+				<?
+				$w = new Visited();
+				$w->where('user_id', $a->id)->get();
+				$count = 0;
+				$visited_mark = "[";
+				foreach($w->all as $wish)
+				{
+					$c = new Campaign();
+					$c->where('id', $wish->campaign_id)->get();
+					$pic = base_url()."images/bgsmall/".$c->photo;
+					$url = site_url('destination/index/'.$c->nickname);
+					echo "<li><a href=".$url."><img src=\"".$pic."\" height=50px/></a></li>";
+					if($count)
+						$visited_mark = $visited_mark.",";
+					$visited_mark = $visited_mark."[";
+					$visited_mark = $visited_mark."'".$c->name."', '".$c->description."', '".$url."', '".$pic."',".$c->lat.",".$c->lng;
+					$visited_mark = $visited_mark."]";
+					$count++;
+				}
+				$visited_mark = $visited_mark."]";
+				if($count==0)
+					echo "No destination visited yet.";
+				else
+					echo "Click on destination to add to visited list.";
+				?>
+				</ul>
+			</div> 
 		</div>
     </div>
 			
@@ -118,6 +144,7 @@ $(function() {
 	$("#tabs").tabs();
 });
 var markers = <?php echo $wishes_mark; ?>;
+var visited = <?php echo $visited_mark; ?>;
 initialize();
   function initialize() {
     var latlng = new google.maps.LatLng(-34.397, 150.644);
@@ -128,6 +155,7 @@ initialize();
     };
     var map = new google.maps.Map(document.getElementById("map"), myOptions);
     setMarkers(map, markers);
+    setVisited(map, visited);
   }
 
   function setMarkers(map, markers) {
@@ -158,5 +186,32 @@ initialize();
 		  });
 	  }
   }
-
+  function setVisited(map, markers) {
+	  for (var i=0; i<markers.length; i++){
+		  var marker = markers[i];
+		  var tLatLng = new google.maps.LatLng(marker[4], marker[5]);
+		  var image = new google.maps.MarkerImage('http://labs.google.com/ridefinder/images/mm_20_green.png',
+			      // This marker is 20 pixels wide by 32 pixels tall.
+			      new google.maps.Size(20, 20),
+			      // The origin for this image is 0,0.
+			      new google.maps.Point(0,0),
+			      // The anchor for this image is the base of the flagpole at 10,10.
+			      new google.maps.Point(0, 20));
+					  
+		  var overMarker = new google.maps.Marker({
+			  position: tLatLng,
+		  	  map: map,
+		  	  icon: image,
+	  	  	  title: marker[0]
+		  });
+		  var contentString = "<div class='mapcontent'><h3><a href='"+marker[2]+"'>"+marker[0]+"</a></h3><br/><img src='"+marker[3]+"' align='left'><div id='content'>"+marker[1]+"</div></div>";
+		  var infoWindow = new google.maps.InfoWindow({
+			  content: contentString,
+			  maxWidth: 400
+		  });
+		  google.maps.event.addListener(overMarker, 'click', function() {
+			  infoWindow.open(map, overMarker);
+		  });
+	  }
+  }
 </script>

@@ -173,12 +173,6 @@
 				<input type="button" class="button" value="have visited" id="visitedbutton"><br/>
 				<?
 				}
-				if($again_visit<1)
-				{
-				?>
-				<input type="button" class="button" value="like to visit again" id="tovisitbutton"><br/>
-				<?
-				}
 				?>
 				<a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php">Share</a>
 				</div>

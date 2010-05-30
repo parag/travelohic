@@ -87,9 +87,6 @@ class Destination extends Controller {
 					$r1 = mysql_query("SELECT COUNT(*) FROM visiteds WHERE campaign_id = ".$c->id." AND user_id = ".$a->id);
 					$total1 = mysql_fetch_array($r1);
 					$is_visited = $total1[0];
-					$r2 = mysql_query("SELECT COUNT(*) FROM tovisits WHERE campaign_id = ".$c->id." AND user_id = ".$a->id);
-					$total2 = mysql_fetch_array($r2);
-					$again_visit = $total2[0];
 				}
 			}
 		}
@@ -126,7 +123,6 @@ class Destination extends Controller {
 		$data['cleanUrl'] = str_replace(":","%3A",$data['cleanUrl']);
 		$data['is_wish'] = $is_wish;
 		$data['is_visited'] = $is_visited;
-		$data['again_visit'] = $again_visit;
 		$_SESSION['url'] = $data['currUrl'];
 		$this->load->view('destination', $data);
 	}
