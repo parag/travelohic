@@ -116,8 +116,10 @@ class Destination extends Controller {
 			}
 			$curr++;
 		}
-		$data['carr1'] = $cArr1;
-		$data['carr2'] = $cArr2;
+		if(isset($cArr1))
+			$data['carr1'] = $cArr1;
+		if(isset($cArr2))
+			$data['carr2'] = $cArr2;
 		$data['currUrl'] = site_url('destination/index/'.$name);
 		$data['cleanUrl'] = $data['currUrl'];
 		$data['cleanUrl'] = str_replace("/","%2F",$data['cleanUrl']);

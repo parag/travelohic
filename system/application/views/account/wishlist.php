@@ -41,7 +41,7 @@
 	<ul id="grid">
 	<?
 	$w = new Wishe();
-	$w->where('user_id', $user_id)->get();
+	$w->where('user_id', $a->id)->get();
 	$count = 0;
 	$wishes_mark = "[";
 	foreach($w->all as $wish)

@@ -14,7 +14,7 @@ foreach($w->all as $wish)
 	{
 		$userpic = "https://graph.facebook.com/".$usr->fb_uis."/picture";
 	}
-	echo "<li><a href = \"".site_url('accounts/wishlist/'.$usr->id)."\"><img src=\"".$userpic."\"/></a></li>";
+	echo "<li><a href = \"".site_url('accounts/wishlist/'.$usr->hash)."\" title=\"".$usr->name."\"><img src=\"".$userpic."\"/></a></li>";
 	$count++;
 }
 ?>

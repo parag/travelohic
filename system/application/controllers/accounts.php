@@ -25,6 +25,7 @@
 			$a->mobile = $this->input->post('mobile');
 			$a->country_id = $this->input->post('country_id');
 			$a->photo = "default.jpeg";
+			$a->hash = md5($a->email);
 			$a->save();
 			foreach ($a->error->all as $err) 
 			{
@@ -253,6 +254,7 @@
 			$a->email = $this->input->post('email');
 			$a->password = $this->input->post('password');
 			$a->mobile = $this->input->post('mobile');
+			$a->hash = md5($a->email);
 			$a->save();
 			//$a->login();
 			foreach ($a->error->all as $err) 
@@ -386,6 +388,7 @@
 				$a->fb_dob = $fb_dob;
 				$a->password = md5(uniqid(rand(), true));
 				$a->salt = md5(uniqid(rand(), true));
+				$a->hash = md5($a->email);
 				$a->save();
 				$a->login();
 			}
@@ -401,12 +404,16 @@
 		}
 	}
 	
-	function wishlist($id)
+	function wishlist($hash)
 	{
 		$data['title'] = "Wishlist";
 		$data['description'] = "Parag's Wishlist";
 		$data['e'] = "";
-		$data['user_id'] = $id;
+		$data['hash'] = $hash;
+		
+		$a = new Account();
+		$a->where('hash',$hash)->get();
+		$data['a'] = $a;
 		$this->load->view('account/wishlist',$data);
 	}
  }

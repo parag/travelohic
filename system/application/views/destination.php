@@ -83,19 +83,25 @@
         <div id="similiar">
             <div style="left:5px;position:absolute;width:50%">
 				<?php
-				foreach($carr1 as $campaign)
+				if(isset($carr1))
 				{
-					echo $campaign->name;
-					echo "<br/>";
+					foreach($carr1 as $campaign)
+					{
+						echo $campaign->name;
+						echo "<br/>";
+					}
 				}
 				?>
 			</div>
 			<div style="right:5px;position:absolute;width:50%">
 				<?php
-				foreach($carr2 as $campaign)
+				if(isset($carr2))
 				{
-					echo $campaign->name;
-					echo "<br/>";
+					foreach($carr2 as $campaign)
+					{
+						echo $campaign->name;
+						echo "<br/>";
+					}
 				}
 				?>
 			</div>
