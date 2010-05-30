@@ -18,56 +18,63 @@
     	</div>
 		<div id="right">
 			<div class="box">
-				<font color="red"><?=$e?></font>
-				<h1>Login</h2>
-            <?php echo form_open_multipart('accounts/login'); ?>
-            	<input type="hidden" name="issend" value="1">
                 <div class="box" style="">
+                	<?php 
+                		$userpic = base_url()."/images/profile/".$a->photo;
+						if($a->fb_uis!="")
+						{
+							$userpic = "https://graph.facebook.com/".$a->fb_uis."/picture";
+						}
+                	?>
+                	<img src="<?php echo $userpic; ?>" align="left"/>
                      <label>
-                        <span>email</span>
-                        <input type="text" class="input_text" name="email" id="email">
+                        <span><small>Name</small></span>
+                        <?php echo $a->name; ?>
                     </label>
 					 <label>
-                        <span>password</span>
-                        <input type="password" class="input_text" name="password" id="password">
+                        <span><small>Country</small></span>
+                        <?php 
+                        	$cid = $a->country_id;
+                        	$co = new Countrie();
+                        	$co->where('id',$cid)->get();
+                        	echo $co->country;
+                        ?>
                     </label>
-					<span><a href="<?=site_url('accounts/forgot_password')?>">forgot password?</a></span>
-                    
                 </div>
-            <?php echo form_close();?>
             </div>
             <div>
-            <br/><br/><br/>
-	<ul id="grid">
-	<?
-	$w = new Wishe();
-	$w->where('user_id', $a->id)->get();
-	$count = 0;
-	$wishes_mark = "[";
-	foreach($w->all as $wish)
-	{
-		$c = new Campaign();
-		$c->where('id', $wish->campaign_id)->get();
-		$pic = base_url()."images/bgsmall/".$c->photo;
-		$url = site_url('destination/index/'.$c->nickname);
-		echo "<li><a href=".$url."><img src=\"".$pic."\"/></a></li>";
-		if($count)
-			$wishes_mark = $wishes_mark.",";
-		$wishes_mark = $wishes_mark."[";
-		$wishes_mark = $wishes_mark."'".$c->name."', '".$c->description."', '".$url."', '".$pic."',".$c->lat.",".$c->lng;
+            <br/><br/><br/><br/><br/>
+        <h1>WISHLIST</h1>
+		<ul id="grid">
+		<?
+		$w = new Wishe();
+		$w->where('user_id', $a->id)->get();
+		$count = 0;
+		$wishes_mark = "[";
+		foreach($w->all as $wish)
+		{
+			$c = new Campaign();
+			$c->where('id', $wish->campaign_id)->get();
+			$pic = base_url()."images/bgsmall/".$c->photo;
+			$url = site_url('destination/index/'.$c->nickname);
+			echo "<li><a href=".$url."><img src=\"".$pic."\"/></a></li>";
+			if($count)
+				$wishes_mark = $wishes_mark.",";
+			$wishes_mark = $wishes_mark."[";
+			$wishes_mark = $wishes_mark."'".$c->name."', '".$c->description."', '".$url."', '".$pic."',".$c->lat.",".$c->lng;
+			$wishes_mark = $wishes_mark."]";
+			$count++;
+		}
 		$wishes_mark = $wishes_mark."]";
-		$count++;
-	}
-	$wishes_mark = $wishes_mark."]";
-	if($count==0)
-		echo "No destination added in wishlist yet.";
-	else
-		echo "Click on destination to add to your wishlist.";
-	?>
-	</ul>
-            </div>
+		if($count==0)
+			echo "No destination added in wishlist yet.";
+		else
+			echo "Click on destination to add to your wishlist.";
+		?>
+		</ul>
+    </div>
 			
-		</div>
+	</div>
 		<div id="menu">
             <ul>
                 <li>
@@ -99,9 +106,18 @@ initialize();
 	  for (var i=0; i<markers.length; i++){
 		  var marker = markers[i];
 		  var tLatLng = new google.maps.LatLng(marker[4], marker[5]);
+		  var image = new google.maps.MarkerImage('http://labs.google.com/ridefinder/images/mm_20_green.png',
+			      // This marker is 20 pixels wide by 32 pixels tall.
+			      new google.maps.Size(20, 20),
+			      // The origin for this image is 0,0.
+			      new google.maps.Point(0,0),
+			      // The anchor for this image is the base of the flagpole at 10,10.
+			      new google.maps.Point(0, 20));
+					  
 		  var overMarker = new google.maps.Marker({
 			  position: tLatLng,
 		  	  map: map,
+		  	  icon: image,
 	  	  	  title: marker[0]
 		  });
 		  var contentString = "<div class='mapcontent'><h3><a href='"+marker[2]+"'>"+marker[0]+"</a></h3><br/><img src='"+marker[3]+"' align='left'><div id='content'>"+marker[1]+"</div></div>";
