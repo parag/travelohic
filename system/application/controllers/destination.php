@@ -29,6 +29,7 @@ class Destination extends Controller {
 		//redirect('welcome');
 		$a = new Account();
 		$is_wish = 0;
+		$is_visited = 0;
 		if($name!="")
 		{
 			$c = new Campaign();
