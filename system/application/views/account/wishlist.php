@@ -159,7 +159,7 @@ initialize();
   }
 
   function setMarkers(map, markers) {
-	  var mMarker = new Array();
+	  var mMarker = new Array(2);
 	  for (var i=0; i<markers.length; i++){
 		  var marker = markers[i];
 		  var tLatLng = new google.maps.LatLng(marker[4], marker[5]);
