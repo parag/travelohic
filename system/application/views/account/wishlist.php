@@ -209,6 +209,7 @@ initialize();
 		  var contentString = "<div class='mapcontent'><h3><a href='"+marker[2]+"'>"+marker[0]+"</a></h3><br/><img src='"+marker[3]+"' align='left'><div id='content'>"+marker[1]+"</div></div>";
 		  
 		  google.maps.event.addListener(overMarker, 'click', function(event) {
+			  alert("#"+contentString);
 			  infoWindow.setContent(contentString);
 			  infoWindow.open(map, this);
 		  });
