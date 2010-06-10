@@ -187,6 +187,7 @@ initialize();
 	  }
   }
   function setVisited(map, markers) {
+	  var markerArr = new Array(2);
 	  for (var i=0; i<markers.length; i++){
 		  var marker = markers[i];
 		  var tLatLng = new google.maps.LatLng(marker[4], marker[5]);
@@ -198,7 +199,7 @@ initialize();
 			      // The anchor for this image is the base of the flagpole at 10,10.
 			      new google.maps.Point(0, 20));
 					  
-		  var overMarker = new google.maps.Marker({
+		  var markerArr[i] = new google.maps.Marker({
 			  position: tLatLng,
 		  	  map: map,
 		  	  icon: image,
@@ -209,8 +210,8 @@ initialize();
 			  content: contentString,
 			  maxWidth: 400
 		  });
-		  google.maps.event.addListener(overMarker, 'click', function() {
-			  infoWindow.open(map, overMarker);
+		  google.maps.event.addListener(markerArr[i], 'click', function() {
+			  infoWindow.open(map, markerArr[i]);
 		  });
 	  }
   }
