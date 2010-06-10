@@ -203,14 +203,14 @@ initialize();
 		      new google.maps.Point(0,0),
 		      // The anchor for this image is the base of the flagpole at 10,10.
 		      new google.maps.Point(0, 20));
-				  
+
+	  alert(marker[3]);		  
 	  var overMarker = new google.maps.Marker({
 		  position: tLatLng,
 	  	  map: map,
 	  	  icon: image,
   	  	  title: marker[0]
 	  });
-	  alert(marker[3]);
 	  var contentString = "<div class='mapcontent'><h3><a href='"+marker[2]+"'>"+marker[0]+"</a></h3><br/><img src='"+marker[3]+"' align='left'><div id='content'>"+marker[1]+"</div></div>";
 	  var infoWindow = new google.maps.InfoWindow({
 		  content: contentString,
