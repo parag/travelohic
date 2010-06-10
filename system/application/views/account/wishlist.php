@@ -190,8 +190,6 @@ initialize();
 	  for (var i=0; i<markers.length; i++){
 		  var marker = markers[i];
 		  var overMarker = createMarker(map, marker);
-		  map.addOverlay(overMarker);
-		  alert("test);
 	  }
   }
 
