@@ -187,7 +187,6 @@ initialize();
 	  }
   }
   function setVisited(map, markers) {
-	  var infoWindows1 = new Array(2);
 	  for (var i=0; i<markers.length; i++){
 		  var marker = markers[i];
 		  var tLatLng = new google.maps.LatLng(marker[4], marker[5]);
@@ -206,12 +205,12 @@ initialize();
 	  	  	  title: marker[0]
 		  });
 		  var contentString = "<div class='mapcontent'><h3><a href='"+marker[2]+"'>"+marker[0]+"</a></h3><br/><img src='"+marker[3]+"' align='left'><div id='content'>"+marker[1]+"</div></div>";
-		  infoWindows1[i] = new google.maps.InfoWindow({
+		  var infoWindow = new google.maps.InfoWindow({
 			  content: contentString,
 			  maxWidth: 400
 		  });
 		  google.maps.event.addListener(overMarker, 'click', function() {
-			  infoWindows[i].open(map, overMarker);
+			  infoWindow.open(map, overMarker);
 		  });
 	  }
   }
