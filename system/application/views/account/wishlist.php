@@ -202,8 +202,7 @@ initialize();
 			  position: tLatLng,
 		  	  map: map,
 		  	  icon: image,
-	  	  	  title: marker[0],
-	  	  	  index: i
+	  	  	  title: marker[0]
 		  });
 		  var contentString = "<div class='mapcontent'><h3><a href='"+marker[2]+"'>"+marker[0]+"</a></h3><br/><img src='"+marker[3]+"' align='left'><div id='content'>"+marker[1]+"</div></div>";
 		  var infoWindow = new google.maps.InfoWindow({
@@ -211,7 +210,7 @@ initialize();
 			  maxWidth: 400
 		  });
 		  google.maps.event.addListener(overMarker, 'click', function() {
-			  alert(overMarker.index);
+			  alert(overMarker.title);
 			  infoWindow.open(map, overMarker);
 		  });
 	  }
