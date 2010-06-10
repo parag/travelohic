@@ -98,7 +98,7 @@
 				$w->where('user_id', $a->id)->get();
 				$count = 0;
 				$visited_mark = "[";
-				foreach($w->all as $wish) 
+				foreach($w->all as $wish)
 				{
 					$c = new Campaign();
 					$c->where('id', $wish->campaign_id)->get();
@@ -148,7 +148,6 @@ var visited = <?php echo $visited_mark; ?>;
 initialize();
   function initialize() {
     var latlng = new google.maps.LatLng(-34.397, 150.644);
-    var bounds = new google.maps.LatLngBounds();
     var myOptions = {
       zoom: 2,
       center: latlng,
@@ -163,7 +162,6 @@ initialize();
 	  for (var i=0; i<markers.length; i++){
 		  var marker = markers[i];
 		  var tLatLng = new google.maps.LatLng(marker[4], marker[5]);
-		  bounds.extends(tLatLng);
 		  var image = new google.maps.MarkerImage('http://labs.google.com/ridefinder/images/mm_20_orange.png',
 			      // This marker is 20 pixels wide by 32 pixels tall.
 			      new google.maps.Size(20, 20),
@@ -188,11 +186,10 @@ initialize();
 		  });
 	  }
   }
-  function setVisited(map, visited) {
-	  for (var i=0; i<visited.length; i++){
-		  var marker = visited[i];
+  function setVisited(map, markers) {
+	  for (var i=0; i<markers.length; i++){
+		  var marker = markers[i];
 		  var tLatLng = new google.maps.LatLng(marker[4], marker[5]);
-		  bounds.extends(tLatLng);
 		  var image = new google.maps.MarkerImage('http://labs.google.com/ridefinder/images/mm_20_green.png',
 			      // This marker is 20 pixels wide by 32 pixels tall.
 			      new google.maps.Size(20, 20),
@@ -212,7 +209,7 @@ initialize();
 			  content: contentString,
 			  maxWidth: 400
 		  });
-		  google.maps.event.addListener(overMarker, 'click', function() {
+		  google.maps.event.addListener(overMarker, 'click', function(overMarker) {
 			  infoWindow.open(map, overMarker);
 		  });
 	  }
