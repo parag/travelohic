@@ -209,7 +209,7 @@ initialize();
 			  content: contentString,
 			  maxWidth: 400
 		  });
-		  google.maps.event.addListener(overMarker, 'click', function() {
+		  google.maps.event.addListener(overMarker, 'click', function(infoWindow) {
 			  infoWindow.open(map, overMarker);
 		  });
 	  }
