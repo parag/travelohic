@@ -187,7 +187,8 @@ initialize();
 	  }
   }
   function setVisited(map, markers) {
-	  var markerArr = new Array(2);
+	  var visitedWindows = new google.maps.InfoWindow({});
+	  var visitedMarkers = new Array(); 
 	  for (var i=0; i<markers.length; i++){
 		  var marker = markers[i];
 		  var tLatLng = new google.maps.LatLng(marker[4], marker[5]);
@@ -199,20 +200,19 @@ initialize();
 			      // The anchor for this image is the base of the flagpole at 10,10.
 			      new google.maps.Point(0, 20));
 					  
-		  var markerArr[i] = new google.maps.Marker({
+		  var overMarker = new google.maps.Marker({
 			  position: tLatLng,
 		  	  map: map,
 		  	  icon: image,
 	  	  	  title: marker[0]
 		  });
 		  var contentString = "<div class='mapcontent'><h3><a href='"+marker[2]+"'>"+marker[0]+"</a></h3><br/><img src='"+marker[3]+"' align='left'><div id='content'>"+marker[1]+"</div></div>";
-		  var infoWindow = new google.maps.InfoWindow({
-			  content: contentString,
-			  maxWidth: 400
+		  
+		  google.maps.event.addListener(overMarker, 'click', function(event) {
+			  infoWindow.setContent(contentString);
+			  infoWindow.open(map, this);
 		  });
-		  google.maps.event.addListener(markerArr[i], 'click', function() {
-			  infoWindow.open(map, markerArr[i]);
-		  });
+		  visitedMarkers.push(overMarker);
 	  }
   }
 </script>
