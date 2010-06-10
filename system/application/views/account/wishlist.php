@@ -197,7 +197,6 @@ initialize();
   {
 	  
 	  var tLatLng = new google.maps.LatLng(marker[4], marker[5]);
-	  alert(marker[3]);
 	  var image = new google.maps.MarkerImage('http://labs.google.com/ridefinder/images/mm_20_green.png',
 		      // This marker is 20 pixels wide by 32 pixels tall.
 		      new google.maps.Size(20, 20),
