@@ -170,7 +170,7 @@ initialize();
 			      // The anchor for this image is the base of the flagpole at 10,10.
 			      new google.maps.Point(0, 20));
 					  
-		  var overMarker[i] = new google.maps.Marker({
+		  var overMarker = new google.maps.Marker({
 			  position: tLatLng,
 		  	  map: map,
 		  	  icon: image,
@@ -181,13 +181,13 @@ initialize();
 			  content: contentString,
 			  maxWidth: 400
 		  });
-		  google.maps.event.addListener(overMarker[i], 'click', function() {
-			  infoWindow.open(map, overMarker[i]);
+		  google.maps.event.addListener(overMarker, 'click', function() {
+			  infoWindow.open(map, overMarker);
 		  });
 	  }
   }
   function setVisited(map, visited) {
-	  for (var i=0; i<visited; i++){
+	  for (var i=0; i<visited.length; i++){
 		  var marker = visited[i];
 		  var tLatLng = new google.maps.LatLng(marker[4], marker[5]);
 		  var image = new google.maps.MarkerImage('http://labs.google.com/ridefinder/images/mm_20_green.png',
