@@ -161,25 +161,34 @@ initialize();
   function setMarkers(map, markers) {
 	  for (var i=0; i<markers.length; i++){
 		  var marker = markers[i];
-		  var overMarker = createMarker(map, marker);
+		  var tLatLng = new google.maps.LatLng(marker[4], marker[5]);
+		  var image = new google.maps.MarkerImage('http://labs.google.com/ridefinder/images/mm_20_orange.png',
+			      // This marker is 20 pixels wide by 32 pixels tall.
+			      new google.maps.Size(20, 20),
+			      // The origin for this image is 0,0.
+			      new google.maps.Point(0,0),
+			      // The anchor for this image is the base of the flagpole at 10,10.
+			      new google.maps.Point(0, 20));
+					  
+		  var overMarker = createMarker(map, marker, image);
 	  }
   }
   function setVisited(map, markers) {
 	  for (var i=0; i<markers.length; i++){
 		  var marker = markers[i];
-		  var overMarker = createMarker(map, marker);
+		  var image = new google.maps.MarkerImage('http://labs.google.com/ridefinder/images/mm_20_green.png',
+			      // This marker is 20 pixels wide by 32 pixels tall.
+			      new google.maps.Size(20, 20),
+			      // The origin for this image is 0,0.
+			      new google.maps.Point(0,0),
+			      // The anchor for this image is the base of the flagpole at 10,10.
+			      new google.maps.Point(0, 20));
+		  var overMarker = createMarker(map, marker, image);
 	  }
   }
 
-  function createMarker(map, marker) {
+  function createMarker(map, marker, image) {
 	  var tLatLng = new google.maps.LatLng(marker[4], marker[5]);
-	  var image = new google.maps.MarkerImage('http://labs.google.com/ridefinder/images/mm_20_green.png',
-		      // This marker is 20 pixels wide by 32 pixels tall.
-		      new google.maps.Size(20, 20),
-		      // The origin for this image is 0,0.
-		      new google.maps.Point(0,0),
-		      // The anchor for this image is the base of the flagpole at 10,10.
-		      new google.maps.Point(0, 20));
 	  var overMarker = new google.maps.Marker({
 		  position: tLatLng,
 	  	  map: map,
