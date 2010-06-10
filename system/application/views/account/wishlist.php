@@ -191,6 +191,7 @@ initialize();
 		  var marker = markers[i];
 		  var overMarker = createMarker(map, marker);
 		  map.addOverlay(overMarker);
+		  alert("test);
 	  }
   }
 
@@ -209,7 +210,6 @@ initialize();
 	  	  icon: image,
   	  	  title: marker[0]
 	  });
-	  alert(marker[4]);
 	  var contentString = "<div class='mapcontent'><h3><a href='"+marker[2]+"'>"+marker[0]+"</a></h3><br/><img src='"+marker[3]+"' align='left'><div id='content'>"+marker[1]+"</div></div>";
 	  var infoWindow = new google.maps.InfoWindow({
 		  content: contentString,
