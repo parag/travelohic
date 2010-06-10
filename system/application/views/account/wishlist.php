@@ -195,7 +195,6 @@ initialize();
 
   function createMarker(marker)
   {
-	  alert(marker[3]);
 	  var tLatLng = new google.maps.LatLng(marker[4], marker[5]);
 	  var image = new google.maps.MarkerImage('http://labs.google.com/ridefinder/images/mm_20_green.png',
 		      // This marker is 20 pixels wide by 32 pixels tall.
@@ -211,6 +210,7 @@ initialize();
 	  	  icon: image,
   	  	  title: marker[0]
 	  });
+	  alert(marker[3]);
 	  var contentString = "<div class='mapcontent'><h3><a href='"+marker[2]+"'>"+marker[0]+"</a></h3><br/><img src='"+marker[3]+"' align='left'><div id='content'>"+marker[1]+"</div></div>";
 	  var infoWindow = new google.maps.InfoWindow({
 		  content: contentString,
