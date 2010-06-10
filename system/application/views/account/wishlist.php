@@ -98,7 +98,7 @@
 				$w->where('user_id', $a->id)->get();
 				$count = 0;
 				$visited_mark = "[";
-				foreach($w->all as $wish)
+				foreach($w->all as $wish) 
 				{
 					$c = new Campaign();
 					$c->where('id', $wish->campaign_id)->get();
@@ -159,6 +159,7 @@ initialize();
   }
 
   function setMarkers(map, markers) {
+	  var overMarker = new Array(markers.length);
 	  for (var i=0; i<markers.length; i++){
 		  var marker = markers[i];
 		  var tLatLng = new google.maps.LatLng(marker[4], marker[5]);
@@ -170,7 +171,7 @@ initialize();
 			      // The anchor for this image is the base of the flagpole at 10,10.
 			      new google.maps.Point(0, 20));
 					  
-		  var overMarker = new google.maps.Marker({
+		  overMarker[i] = new google.maps.Marker({
 			  position: tLatLng,
 		  	  map: map,
 		  	  icon: image,
@@ -181,14 +182,14 @@ initialize();
 			  content: contentString,
 			  maxWidth: 400
 		  });
-		  google.maps.event.addListener(overMarker, 'click', function() {
-			  infoWindow.open(map, overMarker);
+		  google.maps.event.addListener(overMarker[i], 'click', function() {
+			  infoWindow.open(map, overMarker[i]);
 		  });
 	  }
   }
-  function setVisited(map, markers) {
-	  for (var i=0; i<markers.length; i++){
-		  var marker = markers[i];
+  function setVisited(map, visited) {
+	  for (var i=0; i<visited; i++){
+		  var marker = visited[i];
 		  var tLatLng = new google.maps.LatLng(marker[4], marker[5]);
 		  var image = new google.maps.MarkerImage('http://labs.google.com/ridefinder/images/mm_20_green.png',
 			      // This marker is 20 pixels wide by 32 pixels tall.
