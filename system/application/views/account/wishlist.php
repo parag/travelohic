@@ -189,13 +189,13 @@ initialize();
   function setVisited(map, markers) {
 	  for (var i=0; i<markers.length; i++){
 		  var marker = markers[i];
-		  var overMarker = createMarket(marker);
+		  var overMarker = createMarker(marker);
 		  map.addOverlay(overMarker);
 	  }
   }
 
   function createMarker(marker) {
-	  alert("test");
+	  alert(marker[4]);
 	  var tLatLng = new google.maps.LatLng(marker[4], marker[5]);
 	  var image = new google.maps.MarkerImage('http://labs.google.com/ridefinder/images/mm_20_green.png',
 		      // This marker is 20 pixels wide by 32 pixels tall.
