@@ -187,7 +187,7 @@ initialize();
 	  }
   }
   function setVisited(map, markers) {
-	  var infoWindows1 = new Array();
+	  var infoWindows1 = new Array(2);
 	  for (var i=0; i<markers.length; i++){
 		  var marker = markers[i];
 		  var tLatLng = new google.maps.LatLng(marker[4], marker[5]);
