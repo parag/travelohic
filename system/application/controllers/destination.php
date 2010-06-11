@@ -118,7 +118,7 @@ class Destination extends Controller {
 			$data['carr1'] = $cArr1;
 		if(isset($cArr2))
 			$data['carr2'] = $cArr2;
-		$data['currUrl'] = site_url('destination/index/'.$name);
+		$data['currUrl'] = site_url('destination/'.$name);
 		$data['cleanUrl'] = $data['currUrl'];
 		$data['cleanUrl'] = str_replace("/","%2F",$data['cleanUrl']);
 		$data['cleanUrl'] = str_replace(":","%3A",$data['cleanUrl']);
@@ -156,15 +156,6 @@ class Destination extends Controller {
 		echo "1";
 	}
 	
-	function addToVisit()
-	{
-		$t = new Tovisit();
-		$t->user_id = $this->input->post("user_id");
-		$t->campaign_id = $this->input->post("campaign_id");
-		$t->save();
-		echo "1";
-	}
-	
 	function __get_related($categoryid)
 	{
 		$c = new Campaign();
@@ -184,7 +175,7 @@ class Destination extends Controller {
 		{
 			$r = mysql_query("select * from campaigns order by rand() limit 1");
 			$row = mysql_fetch_array($r);
-			redirect('destination/index/'.$row['nickname']);
+			redirect('destination/'.$row['nickname']);
 		}
 	}
 }

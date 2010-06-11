@@ -407,7 +407,7 @@
 	function wishlist($hash)
 	{
 		$data['title'] = "Wishlist";
-		$data['description'] = "Parag's Wishlist";
+		$data['description'] = " Wishlist";
 		$data['e'] = "";
 		$data['hash'] = $hash;
 		

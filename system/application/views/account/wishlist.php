@@ -74,7 +74,7 @@
 					$c = new Campaign();
 					$c->where('id', $wish->campaign_id)->get();
 					$pic = base_url()."images/bgsmall/".$c->photo;
-					$url = site_url('destination/index/'.$c->nickname);
+					$url = site_url('destination/'.$c->nickname);
 					echo "<li><a href=".$url."><img src=\"".$pic."\" height=50px/></a></li>";
 					if($count)
 						$wishes_mark = $wishes_mark.",";
@@ -103,7 +103,7 @@
 					$c = new Campaign();
 					$c->where('id', $wish->campaign_id)->get();
 					$pic = base_url()."images/bgsmall/".$c->photo;
-					$url = site_url('destination/index/'.$c->nickname);
+					$url = site_url('destination/'.$c->nickname);
 					echo "<li><a href=".$url."><img src=\"".$pic."\" height=50px/></a></li>";
 					if($count)
 						$visited_mark = $visited_mark.",";

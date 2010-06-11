@@ -41,7 +41,12 @@
 */
 
 $route['default_controller'] = "welcome";
-$route['scaffolding_trigger'] = "";
+$route['scaffolding_trigger'] = "scaffolding";
+$route['destination/explore'] = "destination/explore";
+$route['destination/addComment'] = "destination/addComment";
+$route['destination/addWish'] = "destination/addWish";
+$route['destination/addVisited'] = "destination/addVisited";  
+$route['destination/(:any)'] = "destination/index/$1";
 
 
 /* End of file routes.php */
